@@ -14,6 +14,7 @@ import java.util.Scanner;
  */
 public class LecturaDatos {
 
+	@SuppressWarnings("resource")
 	public static int LeerInt(){
 		return new Scanner (System.in).nextInt();
 	}
@@ -27,6 +28,7 @@ public class LecturaDatos {
 	 * 
 	 * Se pide un String por Scanner
 	 */
+	@SuppressWarnings("resource")
 	public static String LeerString() {
 		return new Scanner (System.in).nextLine();
 	}
