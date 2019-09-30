@@ -25,7 +25,7 @@ public class FactoriaPelicula {
 		InterfazGrafica.mensajeNombrePelicula();
 		int annoEstreno = (LecturaDatos.LeerInt());
 		InterfazGrafica.mensajeAnnoPelicula();
-		CATEGORIA categoria;
+		CATEGORIA categoria = null;
 		int opcion = 0;
 		while (opcion > 0 && opcion <= 6) {
 			InterfazGrafica.mensajeCategoriaPelicula();
@@ -56,11 +56,10 @@ public class FactoriaPelicula {
 				categoria = CATEGORIA.THRILLER;
 				break;
 			}
-			
-
-			return new Pelicula(nombre, annoEstreno, categoria);
 
 		}
+		return new Pelicula(nombre, annoEstreno, categoria);
+
 	}
 
 }
