@@ -17,7 +17,14 @@ public class Servicio implements IServicio {
 	@Override
 	public void altaPelicula() {
 		// DatoPelicula.altaPelicula(FactoriaPelicula.pedirPelicula());
-		
+
 	}
+
+	@Override
+	public void altaUsuario() {
+		// DatoUsuario.altaUsuario(FactoriaPelicula.pedirUsuario());
+
+	}
+
 
 }
