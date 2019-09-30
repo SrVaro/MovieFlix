@@ -28,7 +28,7 @@ public class FactoriaUsuario {
 	 * 
 	 */
 
-	public static Usuario pedirUsuario() {
+	/*public static Usuario pedirUsuario() {
 		System.out.println("Añadir un usuario");
 
 		String nombre = LecturaDatos.LeerString();
@@ -44,6 +44,6 @@ public class FactoriaUsuario {
 
 		return new Usuario(nombre, apellido1, apellido2, fechaNacimiento, CiudadNacimiento);
 
-	}
+	}*/
 
 }
