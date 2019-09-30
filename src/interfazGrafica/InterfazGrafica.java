@@ -33,6 +33,30 @@ public class InterfazGrafica {
 	}
 
 	/**
+	 * 
+	 * @autor Mª José
+	 * 
+	 * @date 30/09/2019
+	 * 
+	 *       Método que muestra el menú
+	 * 
+	 */
+
+	public static void mostrarMenu() {
+
+		System.out.println("Elija una de las siguientes opciones:");
+		System.out.println("*-------------------------------------------------------*");
+		System.out.println("1: Dar de alta películas.");
+		System.out.println("2: Dar de alta usuarios.");
+		System.out.println("3: Dar de baja usuarios.");
+		System.out.println("4: Modificar usuarios.");
+		System.out.println("5: Listado películas disponibles para el usuario.");
+		System.out.println("6: Litado de todas las películas.");
+		System.out.println("7: Listado de películas por categoria.");
+		System.out.println("*-------------------------------------------------------*");
+	}
+
+	/**
 	 * @author M Carmen
 	 * 
 	 *         mensajes para dar de alta una pelicula
@@ -91,32 +115,9 @@ public class InterfazGrafica {
 	 *       mensaje de error
 	 */
 	public static void mensajeError() {
-		
+
 		System.out.println("\nError al introducir los datos, vuelva a intentarlo:");
-	}
 
-	/**
-	 * 
-	 * @autor Mª José
-	 * 
-	 * @date 30/09/2019
-	 * 
-	 *       Método que muestra el menú
-	 * 
-	 */
-
-	public static void mostrarMenu() {
-
-		System.out.println("Elija una de las siguientes opciones:");
-		System.out.println("*-------------------------------------------------------*");
-		System.out.println("1: Dar de alta películas.");
-		System.out.println("2: Dar de alta usuarios.");
-		System.out.println("3: Dar de baja usuarios.");
-		System.out.println("4: Modificar usuarios.");
-		System.out.println("5: Listado películas disponibles para el usuario.");
-		System.out.println("6: Litado de todas las películas.");
-		System.out.println("7: Listado de películas por categoria.");
-		System.out.println("*-------------------------------------------------------*");
 	}
 
 }

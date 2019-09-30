@@ -1,4 +1,5 @@
 package modelo;
+
 /**
  * 
  * @author M Carmen
@@ -11,13 +12,13 @@ package modelo;
  */
 
 public class Pelicula {
-	
+
 	private String nombre;
 	private int annoEstreno;
 	private CATEGORIA categoria;
-	
+
 	public Pelicula() {
-		
+
 	}
 	
 
@@ -56,8 +57,5 @@ public class Pelicula {
 	public String toString() {
 		return "Pelicula [nombre=" + nombre + ", annoEstreno=" + annoEstreno + "]";
 	}
-	
-	
-	
 
 }

@@ -10,5 +10,11 @@ package servicio;
  */
 
 public class Servicio {
+	
+	public Servicio() {
+		
+	}
+	
+	
 
 }
