@@ -54,17 +54,7 @@ public class InterfazGrafica {
         System.out.println("\tPonga 6 para seleccionar categoria THRILLER");
 	}
 	
-	/**
-	 * @author M Carmen
-	 * menu opcion: alta pelicula
-	 */
-	public static void mostrarMenu() {
 	
-		System.out.println("\nOpciones:");
-		System.out.println("\t 1-Dar de alta una pelicula nueva");
-		
-		
-	}
 
 	/**
 	 * 
