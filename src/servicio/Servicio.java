@@ -1,6 +1,7 @@
 package servicio;
 
 import datos.DatoPelicula;
+import interfazGrafica.InterfazGrafica;
 import modelo.FactoriaPelicula;
 
 /**
@@ -24,6 +25,13 @@ public class Servicio implements IServicio {
 	public void altaUsuario() {
 		// DatoUsuario.altaUsuario(FactoriaPelicula.pedirUsuario());
 
+	}
+
+	@Override
+	public void bajaUsuario() {
+		//InterfazGrafica.pedirId();
+		// DatoUsuario.bajaUsuario(LecturaDatos.LeerInt());
+		
 	}
 
 
