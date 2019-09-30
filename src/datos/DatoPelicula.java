@@ -1,4 +1,5 @@
 package datos;
+
 import modelo.Pelicula;
 
 /**
@@ -13,7 +14,4 @@ import modelo.Pelicula;
 
 public class DatoPelicula {
 
-	
-		
-	
 }

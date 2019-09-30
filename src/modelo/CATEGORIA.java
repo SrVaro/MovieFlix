@@ -13,6 +13,5 @@ package modelo;
 public enum CATEGORIA {
 
 	POLICIACA, ROMANTICA, AVENTURAS, COMEDIA, ANIMACION, THRILLER;
-	
-	
+
 }

@@ -1,6 +1,6 @@
 package interfazGrafica;
 
-/** 
+/**
  * 
  * @author Andres
  * 
@@ -17,12 +17,12 @@ public class InterfazGrafica {
 	 * 
 	 * @date 30/09/2019
 	 * 
-	 * Método que muestra el menú
+	 *       Método que muestra el menú
 	 * 
 	 */
-	
+
 	public static void mostrarMenu() {
-		
+
 		System.out.println("Elija una de las siguientes opciones:");
 		System.out.println("*-------------------------------------------------------*");
 		System.out.println("1: Dar de alta películas.");
@@ -34,6 +34,5 @@ public class InterfazGrafica {
 		System.out.println("7: Listado de películas por categoria.");
 		System.out.println("*-------------------------------------------------------*");
 	}
-		
-	}
 
+}

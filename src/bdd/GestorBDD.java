@@ -1,4 +1,5 @@
 package bdd;
+
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -13,35 +14,32 @@ import javax.swing.JOptionPane;
  */
 
 public class GestorBDD {
-	
+
 	public String bd = "movie_flix";
-	public String url = "jdbc:mysql://10.90.36.106/"+bd;
+	public String url = "jdbc:mysql://10.90.36.106/" + bd;
 	public String user = "root";
 	public String pass = "root";
-	
+
 	/**
 	 * 
 	 * @return Connection
 	 * 
-	 * Método que conecta con la base de datos y devuelve la conexión
+	 *         Método que conecta con la base de datos y devuelve la conexión
 	 */
-	
-	public Connection Conectar () {
+
+	public Connection Conectar() {
 		Connection link = null;
-		try{
+		try {
 			Class.forName("org.gjt.mm.mysql.Driver");
-		
+
 			link = DriverManager.getConnection(this.url, this.user, this.pass);
-			
-		}catch(Exception ex){
 
-	           JOptionPane.showMessageDialog(null, ex);
+		} catch (Exception ex) {
 
-	       }
+			JOptionPane.showMessageDialog(null, ex);
+
+		}
 		return link;
-		
-		
-		
-	
+
 	}
-	}
+}

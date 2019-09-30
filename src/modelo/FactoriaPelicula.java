@@ -9,6 +9,5 @@ package modelo;
  */
 
 public class FactoriaPelicula {
-	
-	
+
 }
