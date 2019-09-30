@@ -13,8 +13,7 @@ import modelo.Pelicula;
 
 public class DatoPelicula {
 
-	public static void altaPelicula(Pelicula p) {
+	
 		
-	}
 	
 }
