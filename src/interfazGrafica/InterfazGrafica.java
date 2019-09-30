@@ -84,6 +84,18 @@ public class InterfazGrafica {
 	}
 
 	/**
+	 * @author M Carmen
+	 * 
+	 * @date 30/09/2019
+	 * 
+	 *       mensaje de error
+	 */
+	public static void mensajeError() {
+		
+		System.out.println("\nError al introducir los datos, vuelva a intentarlo:");
+	}
+
+	/**
 	 * 
 	 * @autor Mª José
 	 * 
