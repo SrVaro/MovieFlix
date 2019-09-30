@@ -1,5 +1,6 @@
 package control;
 
+import servicio.Servicio;
 import utilidades.LecturaDatos;
 
 /**
@@ -32,6 +33,7 @@ public class Control {
 		switch (opcion) {
 
 		case 1:
+			// Servicio.altaPelicula();
 			break;
 		case 2:
 			break;
