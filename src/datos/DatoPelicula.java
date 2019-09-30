@@ -1,4 +1,5 @@
 package datos;
+import modelo.Pelicula;
 
 /**
  * 
@@ -12,5 +13,8 @@ package datos;
 
 public class DatoPelicula {
 
+	public static void altaPelicula(Pelicula p) {
+		
+	}
 	
 }
