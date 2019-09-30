@@ -2,8 +2,7 @@ package interfazGrafica;
 
 import modelo.Pelicula;
 
-
-/** 
+/**
  * 
  * @author Andres
  * 
@@ -13,12 +12,13 @@ import modelo.Pelicula;
  *
  */
 public class InterfazGrafica {
-	
-	private Pelicula p =new Pelicula();
+
+	private Pelicula p = new Pelicula();
+
 	public InterfazGrafica() {
-		
+
 	}
-	
+
 	public Pelicula getP() {
 		return p;
 	}
@@ -26,7 +26,7 @@ public class InterfazGrafica {
 	public void setP(Pelicula p) {
 		this.p = p;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "InterfazGrafica [p=" + p + "]";
@@ -35,26 +35,53 @@ public class InterfazGrafica {
 	/**
 	 * @author M Carmen
 	 * 
-	 * mensajes para dar de alta una pelicula
+	 *         mensajes para dar de alta una pelicula
 	 */
 	public static void mensajeNombrePelicula() {
 		System.out.println("\nIntroduzca el nombre de la película:");
 	}
-	
+
 	public static void mensajeAnnoPelicula() {
 		System.out.println("\n Introduzca el año del estreno:");
 	}
+
 	public static void mensajeCategoriaPelicula() {
 		System.out.println("\nIntroduzca a que categoria pertenece:");
 		System.out.println("\tPonga 1 para seleccionar categoria POLICIACA");
-        System.out.println("\tPonga 2 para seleccionar categoria ROMANTICA");
-        System.out.println("\tPonga 3 para seleccionar categoria AVENTURAS");
-        System.out.println("\tPonga 4 para seleccionar categoria COMEDIA");
-        System.out.println("\tPonga 5 para seleccionar categoria ANIMACION");
-        System.out.println("\tPonga 6 para seleccionar categoria THRILLER");
+		System.out.println("\tPonga 2 para seleccionar categoria ROMANTICA");
+		System.out.println("\tPonga 3 para seleccionar categoria AVENTURAS");
+		System.out.println("\tPonga 4 para seleccionar categoria COMEDIA");
+		System.out.println("\tPonga 5 para seleccionar categoria ANIMACION");
+		System.out.println("\tPonga 6 para seleccionar categoria THRILLER");
 	}
-	
-	
+
+	/**
+	 * @author M Carmen
+	 * 
+	 * @date 30/09/2019
+	 * 
+	 *       mensajes para dar de alta un usuario
+	 */
+
+	public static void mensajeNombreUsuario() {
+		System.out.println("\nIntroduzca el nombre de usuario:");
+	}
+
+	public static void mensajeApellido1Usuario() {
+		System.out.println("\nIntroduzca primer apellido:");
+	}
+
+	public static void mensajeApellido2Usuario() {
+		System.out.println("\nIntroduzca segundo apellido");
+	}
+
+	public static void mensajeFechaNacimientoUsuario() {
+		System.out.println("\n Introduzca la fecha de nacimiento (yyyy-MM-dd):");
+	}
+
+	public static void mensajeCiudadUsuario() {
+		System.out.println("\n Introduzca ciudad del usuario:");
+	}
 
 	/**
 	 * 
@@ -62,12 +89,12 @@ public class InterfazGrafica {
 	 * 
 	 * @date 30/09/2019
 	 * 
-	 * Método que muestra el menú
+	 *       Método que muestra el menú
 	 * 
 	 */
-	
+
 	public static void mostrarMenu() {
-		
+
 		System.out.println("Elija una de las siguientes opciones:");
 		System.out.println("*-------------------------------------------------------*");
 		System.out.println("1: Dar de alta películas.");
@@ -79,6 +106,5 @@ public class InterfazGrafica {
 		System.out.println("7: Listado de películas por categoria.");
 		System.out.println("*-------------------------------------------------------*");
 	}
-		
-	}
 
+}
