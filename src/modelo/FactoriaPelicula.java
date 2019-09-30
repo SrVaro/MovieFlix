@@ -21,8 +21,10 @@ public class FactoriaPelicula {
 	public static Pelicula pedirPelicula() {
 		System.out.println("Adjuntar nueva película");
 
-		String nombre = LecturaDatos.LeerString("Introduzca el nombre de la pelicula");
-		int annoEstreno = (LecturaDatos.LeerInt("Introduzca el año de estreno de la Película"));
+		String nombre = LecturaDatos.LeerString();
+		InterfazGrafica.mensajeNombrePelicula();
+		int annoEstreno = (LecturaDatos.LeerInt());
+		InterfazGrafica.mensajeAnnoPelicula();
 		CATEGORIA categoria;
 		int opcion = 0;
 		while (opcion > 0 && opcion <= 6) {
