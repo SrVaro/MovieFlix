@@ -21,13 +21,18 @@ public class FactoriaPelicula {
 	public static Pelicula pedirPelicula() {
 		System.out.println("Adjuntar nueva película");
 
-		String nombre = LecturaDatos.LeerString();
 		InterfazGrafica.mensajeNombrePelicula();
-		int annoEstreno = (LecturaDatos.LeerInt());
+		String nombre = LecturaDatos.LeerString();
+
 		InterfazGrafica.mensajeAnnoPelicula();
+		int annoEstreno = (LecturaDatos.LeerInt());
+
 		CATEGORIA categoria = null;
+
 		int opcion = 0;
-		while (opcion > 0 && opcion <= 6) {
+
+		do {
+
 			InterfazGrafica.mensajeCategoriaPelicula();
 			opcion = LecturaDatos.LeerInt();
 
@@ -35,31 +40,23 @@ public class FactoriaPelicula {
 			case 1:
 				categoria = CATEGORIA.POLICIACA;
 				break;
-
 			case 2:
 				categoria = CATEGORIA.ROMANTICA;
 				break;
-
 			case 3:
 				categoria = CATEGORIA.AVENTURAS;
 				break;
-
 			case 4:
 				categoria = CATEGORIA.COMEDIA;
 				break;
-
 			case 5:
 				categoria = CATEGORIA.ANIMACION;
 				break;
-
 			case 6:
 				categoria = CATEGORIA.THRILLER;
 				break;
 			}
-
-		}
+		} while (opcion < 1 && opcion > 6);
 		return new Pelicula(nombre, annoEstreno, categoria);
-
 	}
-
 }
