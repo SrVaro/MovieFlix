@@ -1,5 +1,7 @@
 package utilidades;
 
+import java.io.Writer;
+import java.sql.Date;
 /** 
  * 
  * @author Andres
@@ -40,4 +42,25 @@ public class LecturaDatos {
 		System.out.println(mensaje);
 		return LeerString();
 	}
+	
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 */
+	public static Date LeerFecha() {
+	
+	//InterfazGrafica.mensajeFechaNacimientoUsuario();
+	boolean correct = false;
+    Date date = null;
+    while (!correct) {
+        try {
+            date = Date.valueOf(LecturaDatos.LeerString());
+            correct = true;
+        } catch (IllegalArgumentException e) {
+           // InterfazGrafica.wrongData();
+        }
+    }
+    return date;
+}
 }
