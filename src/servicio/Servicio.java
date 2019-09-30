@@ -1,5 +1,8 @@
 package servicio;
 
+import datos.DatoPelicula;
+import modelo.FactoriaPelicula;
+
 /**
  * 
  * @author Mª José
@@ -9,6 +12,12 @@ package servicio;
  * @date 30/09/2019
  */
 
-public class Servicio {
+public class Servicio implements IServicio {
+
+	@Override
+	public void altaPelicula() {
+		// DatoPelicula.altaPelicula(FactoriaPelicula.pedirPelicula());
+		
+	}
 
 }
