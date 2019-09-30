@@ -10,7 +10,7 @@ package modelo;
  *
  */
 
-public enum Categoria {
+public enum CATEGORIA {
 
 	POLICIACA, ROMANTICA, AVENTURAS, COMEDIA, ANIMACION, THRILLER;
 	
