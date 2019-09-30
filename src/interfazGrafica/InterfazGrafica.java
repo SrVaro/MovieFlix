@@ -15,11 +15,12 @@ public class InterfazGrafica {
 	 * 
 	 * @autor Mª José
 	 * 
-	 * @version 0.1
-	 * 
 	 * @date 30/09/2019
 	 * 
+	 * Método que muestra el menú
+	 * 
 	 */
+	
 	public static void mostrarMenu() {
 		
 		System.out.println("Elija una de las siguientes opciones:");
