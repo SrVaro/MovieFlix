@@ -1,6 +1,6 @@
 package modelo;
 
-import java.util.Date;
+import java.sql.Date;
 
 import interfazGrafica.InterfazGrafica;
 import utilidades.LecturaDatos;
@@ -28,22 +28,26 @@ public class FactoriaUsuario {
 	 * 
 	 */
 
-	/*public static Usuario pedirUsuario() {
+	public static Usuario pedirUsuario() {
 		System.out.println("Añadir un usuario");
 
-		String nombre = LecturaDatos.LeerString();
 		InterfazGrafica.mensajeNombreUsuario();
-		String apellido1 = LecturaDatos.LeerString();
+		String nombre = LecturaDatos.LeerString();
+		
 		InterfazGrafica.mensajeApellido1Usuario();
-		String apellido2 = LecturaDatos.LeerString();
+		String apellido1 = LecturaDatos.LeerString();
+		
 		InterfazGrafica.mensajeApellido2Usuario();
-		Date fechaNacimiento = LecturaDatos.LeerFecha();
+		String apellido2 = LecturaDatos.LeerString();
+		
 		InterfazGrafica.mensajeFechaNacimientoUsuario();
-		String CiudadNacimiento = LecturaDatos.LeerString();
+		Date fechaNacimiento = LecturaDatos.LeerFecha();
+		
 		InterfazGrafica.mensajeCiudadUsuario();
+		String CiudadNacimiento = LecturaDatos.LeerString();
 
 		return new Usuario(nombre, apellido1, apellido2, fechaNacimiento, CiudadNacimiento);
 
-	}*/
+	}
 
 }

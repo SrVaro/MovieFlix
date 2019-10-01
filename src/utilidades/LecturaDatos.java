@@ -13,6 +13,8 @@ import java.sql.Date;
  */
 import java.util.Scanner;
 
+import interfazGrafica.InterfazGrafica;
+
 /**
  * @author Andres
  * Se pide un entero por Scanner
@@ -58,7 +60,7 @@ public class LecturaDatos {
             date = Date.valueOf(LecturaDatos.LeerString());
             correct = true;
         } catch (IllegalArgumentException e) {
-           // InterfazGrafica.wrongData();
+            InterfazGrafica.mensajeError();
         }
     }
     return date;
