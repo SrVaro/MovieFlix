@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -44,6 +46,38 @@ public class DatoPelicula {
 
 			// InterfazGrafica.mensajeError();
 
+		}
+
+		return exito;
+	}
+	/**
+	 * @author M Carmen
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 * muestra listado de peliculas
+	 *
+	 */
+	public static boolean listarPeliculas() {
+		
+		List <Pelicula> x= new ArrayList <Pelicula>();
+		
+		boolean exito=true;
+		
+		String SSQL = "SELECT DISTINCT * FROM pelicula";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+
+
+			  psql.executeUpdate();
+
+			psql.close();
+			// conexion
+
+		} catch (SQLException e) {
+
+			// InterfazGrafica.mensajeError();
+			
 		}
 
 		return exito;
