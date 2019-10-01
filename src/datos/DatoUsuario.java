@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import bdd.GestorBDD;
 
@@ -60,18 +61,37 @@ public class DatoUsuario implements IDatoUsuario {
 
 		String SQL = "SELECT * FROM usuariocategoria WHERE idUsuario = ?";
 
-		PreparedStatement stmt;
+		ArrayList<String> categoriasUsuario = new ArrayList<>();
+
 		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
 
 			p.setInt(1, ID);
 
 			try (ResultSet rs = p.executeQuery();) {
 				while (rs.next()) {
-					System.out.println("EMP_ID=" + rs.getString(3));
+					categoriasUsuario.add(rs.getString(3));
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+
+		for (String categoria : categoriasUsuario) {
+
+			SQL = "SELECT * FROM pelicula WHERE categoria = ?";
+
+			try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
+
+				p.setString(1, categoria);
+
+				try (ResultSet rs = p.executeQuery();) {
+					while (rs.next()) {
+						System.out.println(rs.getString(2));
+					}
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 
 		return exito;
