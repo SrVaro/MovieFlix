@@ -86,25 +86,24 @@ public class DatoPelicula {
 
 		return exito;
 	}
-	
-	public boolean listarPeliculasVal() {
-		
-		boolean exito = true;
-		
-		String SSQL = "SELECT * FROM pelicula ORDER BY valoracion DESC";
-		
-		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
-            ResultSet x = psql.executeQuery();
-            while (x.next()) {
-                System.out.println(x.getString(2));
-            }
-        } catch (SQLException e) {
-            InterfazGrafica.mensajeErrorBbdd();
-            exito = false;
-        }
-        return exito;
-    }
 
+	public boolean listarPeliculasVal() {
+
+		boolean exito = true;
+
+		String SSQL = "SELECT * FROM pelicula ORDER BY valoracion DESC";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+			ResultSet x = psql.executeQuery();
+			while (x.next()) {
+				System.out.println(x.getString(2));
+			}
+		} catch (SQLException e) {
+			InterfazGrafica.mensajeErrorBbdd();
+			exito = false;
+		}
+		return exito;
+	}
 
 	/**
 	 * 
@@ -167,6 +166,7 @@ public class DatoPelicula {
 
 		return exito;
 	}
+
 	/**
 	 * @author Varo
 	 * 
@@ -212,7 +212,7 @@ public class DatoPelicula {
 					break;
 				}
 
-				altaPelicula(new Pelicula(nombre, anno, categoria, (int)(Math.random() * 5)));
+				altaPelicula(new Pelicula(nombre, anno, categoria, (int) (Math.random() * 5)));
 
 			}
 		} catch (Exception e) {

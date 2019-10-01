@@ -35,6 +35,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 * 
 	 *       Da de baja a un usuario
 	 */
+	@Override
 	public boolean bajaUsuario(int ID) {
 		boolean exito = true;
 		String SQL = "DELETE FROM usuario WHERE idUsuario = ?";
@@ -59,6 +60,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 * 
 	 *       Lista de todos los usuarios
 	 */
+	@Override
 	public boolean listarUsuarios() {
 		boolean exito = true;
 
@@ -87,6 +89,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 * 
 	 *       Lista todas las peliculas que tiene disponible un usuario
 	 */
+	@Override
 	public boolean peliculasUsuario(int ID) {
 		boolean exito = true;
 
@@ -138,7 +141,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 * 
 	 *       metodo dar de alta a un usuario
 	 */
-
+	@Override
 	public boolean altaUsuario(Usuario u) {
 
 		boolean exito = true;
@@ -172,7 +175,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 * 
 	 *       Metodo actualizar un usuario
 	 */
-
+	@Override
 	public boolean actualizarUsuario(Usuario u, int id) {
 		boolean exito = true;
 
@@ -191,6 +194,31 @@ public class DatoUsuario implements IDatoUsuario {
 
 		}
 		return exito;
+	}
+
+	@Override
+	public boolean listarPeliculasNoVistas(int id) {
+		boolean exito = true;
+
+		String SQL = "SELECT * FROM pelicula P LEFT JOIN REGISTRO AS R ON P.idPelicula=R.idPelicula WHERE R.idUsuario != 1 OR R.idUsuario IS NULL;";
+
+		ArrayList<String> categoriasUsuario = new ArrayList<>();
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
+
+			p.setInt(1, id);
+
+			try (ResultSet rs = p.executeQuery();) {
+				while (rs.next()) {
+					categoriasUsuario.add(rs.getString(3));
+				}
+			}
+		} catch (SQLException e) {
+			exito = false;
+			e.printStackTrace();
+		}
+
+		return false;
 	}
 
 }
