@@ -1,7 +1,9 @@
 package servicio;
 
 import datos.DatoPelicula;
+import datos.DatoUsuario;
 import modelo.FactoriaPelicula;
+import utilidades.LecturaDatos;
 
 /**
  * 
@@ -14,6 +16,7 @@ import modelo.FactoriaPelicula;
 
 public class Servicio implements IServicio {
 	
+	DatoUsuario du = new DatoUsuario();
 	
 	public Servicio() {
 		
@@ -21,7 +24,13 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void altaPelicula() {
-		// DatoPelicula.altaPelicula(FactoriaPelicula.pedirPelicula());
+		//du.altaPelicula(FactoriaPelicula.pedirPelicula());
+		
+	}
+	
+	@Override
+	public void bajaUsuario() {
+		du.bajaUsuario(LecturaDatos.LeerInt());
 		
 	}
 

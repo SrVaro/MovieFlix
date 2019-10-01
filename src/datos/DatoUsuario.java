@@ -1,5 +1,10 @@
 package datos;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import bdd.GestorBDD;
 
 /**
  * 
@@ -17,7 +22,29 @@ public class DatoUsuario implements IDatoUsuario{
 		
 	}
 	
-	
+	/**
+	 * @author M Carmen
+	 * 
+	 * @date 30/09/2019
+	 * 
+	 *       da de baja a un usuario
+	 */
+	public boolean bajaUsuario(int ID) {
+		boolean exito = true;
+		String SQL = "DELETE FROM usuario WHERE idUsuario = ?";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
+
+			p.setInt(1, ID);
+
+			p.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e);
+			exito = false;
+		}
+		return exito;
+	}
 
 
 }

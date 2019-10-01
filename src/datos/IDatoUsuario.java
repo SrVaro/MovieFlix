@@ -17,28 +17,6 @@ import bdd.GestorBDD;
  */
 public interface IDatoUsuario {
 
-	/**
-	 * @author M Carmen
-	 * 
-	 * @date 30/09/2019
-	 * 
-	 *       da de baja a un usuario
-	 */
-	public static boolean bajaUsuario(int ID) {
-		boolean exito = true;
-		String SQL = "DELETE FROM usuario WHERE idUsuario = ?";
-
-		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
-
-			p.setInt(1, ID);
-
-			p.executeUpdate();
-
-		} catch (SQLException e) {
-			System.out.println(e);
-			exito = false;
-		}
-		return exito;
-	}
+	public boolean bajaUsuario(int ID);
 
 }
