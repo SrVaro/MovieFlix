@@ -48,7 +48,7 @@ public class DatoPelicula {
 	}
 
 	public boolean importarPeliculasTXT() {
-		File archivo = new File("peliculas_cat.txt");
+		File archivo = new File("src/peliculas_cat.txt");
 
 		try (FileReader fr = new FileReader(archivo); BufferedReader br = new BufferedReader(fr)) {
 			String linea;
