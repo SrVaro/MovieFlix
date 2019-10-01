@@ -55,6 +55,8 @@ public class InterfazGrafica {
 		System.out.println("7: Listado de películas por categoria.");
 		System.out.println("8: Listar Usuarios");
 		System.out.println("9: Listado de películas por visualizaciones de mayor a menor");
+		System.out.println("10: Listado de películas de mayor a menor valoración");
+		System.out.println("11: Listado de películas no vistas por el usuario");
 		System.out.println("0: Para salir.");
 		System.out.println("*-------------------------------------------------------*");
 	}

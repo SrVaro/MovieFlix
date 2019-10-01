@@ -27,5 +27,9 @@ public interface IServicio {
 	public void listarUsuarios();
 	
 	public void listarPeliculasMayMen();
+
+	public void listarPeliculasVal();
+	
+	public void listarPeliculasNoVistas();
 }
 

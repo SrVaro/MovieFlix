@@ -86,6 +86,15 @@ public class DatoPelicula {
 		return exito;
 	}
 	
+	/**
+	 * 
+	 * @author Mª José
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 *  Metodo que muestra películas por su valoración (de mayor a menor)
+	 */
+	
 	public boolean listarPeliculasVal() {
 		
 		boolean exito = true;
