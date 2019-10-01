@@ -16,15 +16,27 @@ public class Pelicula {
 	private String nombre;
 	private int annoEstreno;
 	private CATEGORIA categoria;
+	private int valoracion;
 
 	public Pelicula() {
 
 	}
 
-	public Pelicula(String nombre, int annoEstreno, CATEGORIA categoria) {
+	public Pelicula(String nombre, int annoEstreno, CATEGORIA categoria, int valoracion) {
 		this.nombre = nombre;
 		this.annoEstreno = annoEstreno;
 		this.categoria = categoria;
+		this.valoracion = valoracion;
+	}
+	
+	
+
+	public int getValoracion() {
+		return valoracion;
+	}
+
+	public void setValoracion(int valoracion) {
+		this.valoracion = valoracion;
 	}
 
 	public String getNombre() {
@@ -53,7 +65,10 @@ public class Pelicula {
 
 	@Override
 	public String toString() {
-		return "Pelicula [nombre=" + nombre + ", annoEstreno=" + annoEstreno + "]";
+		return "Pelicula [nombre=" + nombre + ", annoEstreno=" + annoEstreno + ", categoria=" + categoria
+				+ ", valoracion=" + valoracion + "]";
 	}
+
+	
 
 }
