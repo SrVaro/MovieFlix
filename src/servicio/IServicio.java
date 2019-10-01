@@ -8,5 +8,7 @@ package servicio;
  *@date 30/09/2019
  */
 public interface IServicio {
+	
+	public void altaPelicula();
 
 }

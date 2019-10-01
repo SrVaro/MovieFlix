@@ -1,4 +1,6 @@
 package datos;
+
+
 /**
  * 
  * @author M Carmen
@@ -9,6 +11,13 @@ package datos;
  *
  */
 
-public class DatoUsuario {
+public class DatoUsuario implements IDatoUsuario{
+	
+	public DatoUsuario() {
+		
+	}
+	
+	
+
 
 }
