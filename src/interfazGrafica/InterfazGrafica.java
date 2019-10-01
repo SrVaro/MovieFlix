@@ -120,4 +120,18 @@ public class InterfazGrafica {
 
 	}
 
+
+/**
+ * @author M Carmen
+ * 
+ * @date 01/10/2019
+ * 
+ *       mensaje de error BBDD
+ */
+public static void mensajeErrorBbdd() {
+
+	System.out.println("\nError BDD:");
+
+}
+
 }

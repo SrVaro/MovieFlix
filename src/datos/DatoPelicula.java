@@ -7,6 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
 import bdd.GestorBDD;
 import interfazGrafica.InterfazGrafica;
 
@@ -38,8 +44,39 @@ public class DatoPelicula {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeError();
+			InterfazGrafica.mensajeErrorBbdd();
 
+		}
+
+		return exito;
+	}
+
+	/**
+	 * @author M Carmen
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 *       muestra listado de peliculas
+	 *
+	 */
+	public static boolean listarPeliculas() {
+
+		boolean exito = true;
+
+		String SSQL = "SELECT * FROM pelicula";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+
+			ResultSet x = psql.executeQuery();
+
+			while (x.next()) {
+				System.out.println(x.getString(2));
+			}
+
+		} catch (SQLException e) {
+
+			InterfazGrafica.mensajeErrorBbdd();
+			exito=false;
 		}
 
 		return exito;
