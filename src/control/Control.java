@@ -36,7 +36,7 @@ public class Control {
 		switch (opcion) {
 
 		case 1:
-			// s.altaPelicula();
+			s.altaPelicula();
 			break;
 		case 2:
 			s.altaUsuario();
@@ -45,8 +45,10 @@ public class Control {
 			s.bajaUsuario();
 			break;
 		case 4:
+			s.actualizarUsuario();
 			break;
 		case 5:
+			s.peliculaUsuario();
 			break;
 		}
 

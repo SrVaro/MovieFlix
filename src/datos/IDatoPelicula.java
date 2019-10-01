@@ -1,5 +1,7 @@
 package datos;
 
+import modelo.Pelicula;
+
 /**
  * 
  * @author M Carmen
@@ -12,4 +14,6 @@ package datos;
 
 public interface IDatoPelicula {
 
+	public boolean altaPelicula(Pelicula p);
+	
 }

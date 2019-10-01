@@ -20,7 +20,7 @@ import interfazGrafica.InterfazGrafica;
 
 public class DatoPelicula {
 
-	public static boolean altaPelicula(Pelicula p) {
+	public boolean altaPelicula(Pelicula p) {
 
 		boolean exito = true;
 
