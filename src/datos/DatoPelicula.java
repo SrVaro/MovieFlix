@@ -43,7 +43,7 @@ public class DatoPelicula {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeError();
+			InterfazGrafica.mensajeErrorBbdd();
 
 		}
 
@@ -74,7 +74,7 @@ public class DatoPelicula {
 
 		} catch (SQLException e) {
 
-			// InterfazGrafica.mensajeError();
+			InterfazGrafica.mensajeErrorBbdd();
 			exito=false;
 		}
 
