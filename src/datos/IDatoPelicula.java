@@ -29,4 +29,6 @@ public interface IDatoPelicula {
 	public boolean listarPeliculaActual();
 
 	public boolean listarCategorias();
+
+	public boolean bajaPelicula(int ID);
 }

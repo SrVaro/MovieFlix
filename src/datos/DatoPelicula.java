@@ -224,7 +224,7 @@ public class DatoPelicula {
 
 		return true;
 	}
-	
+
 	/**
 	 * 
 	 * @author Andres
@@ -233,15 +233,15 @@ public class DatoPelicula {
 	 * 
 	 *       metodo listar pelicula por categoria
 	 */
-	
+
 	public boolean listarPeliculaActual() {
 		boolean exito = true;
-		Calendar cal= Calendar.getInstance();
-		int year= cal.get(Calendar.YEAR);
+		Calendar cal = Calendar.getInstance();
+		int year = cal.get(Calendar.YEAR);
 		String SSQL = "SELECT * FROM pelicula WHERE annoEstreno = ?";
 
 		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
-			
+
 			psql.setInt(1, year);
 
 			ResultSet x = psql.executeQuery();
@@ -258,8 +258,6 @@ public class DatoPelicula {
 
 		return exito;
 	}
-	
-	
 
 	/**
 	 * 
@@ -267,9 +265,9 @@ public class DatoPelicula {
 	 * 
 	 * @date 01/10/19
 	 * 
-	 *  metodo para listar categorias
+	 *       metodo para listar categorias
 	 */
-	
+
 	public boolean listarCategorias() {
 
 		boolean exito = true;
@@ -292,4 +290,31 @@ public class DatoPelicula {
 
 		return exito;
 	}
+
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 * @date 01/10/19
+	 * 
+	 *       metodo para listar categorias
+	 */
+
+	public boolean bajaPelicula(int id) {
+		boolean exito = true;
+		String SQL = "DELETE FROM pelicula WHERE idPelicula=?";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
+
+			p.setInt(1, id);
+
+			p.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e);
+			exito = false;
+		}
+		return exito;
+	}
+
 }
