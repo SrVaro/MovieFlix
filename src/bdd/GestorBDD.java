@@ -15,10 +15,10 @@ import javax.swing.JOptionPane;
 
 public class GestorBDD {
 
-	public String bd = "movie_flix";
-	public String url = "jdbc:mysql://10.90.36.106/" + bd;
-	public String user = "root";
-	public String pass = "root";
+	public static String bd = "movie_flix";
+	public static String url = "jdbc:mysql://10.90.36.106/" + bd;
+	public static String user = "root";
+	public static String pass = "root";
 
 	/**
 	 * 
@@ -27,12 +27,13 @@ public class GestorBDD {
 	 *         Método que conecta con la base de datos y devuelve la conexión
 	 */
 
-	public Connection Conectar() {
+	public static Connection Conectar() {
+
 		Connection link = null;
 		try {
 			Class.forName("org.gjt.mm.mysql.Driver");
 
-			link = DriverManager.getConnection(this.url, this.user, this.pass);
+			link = DriverManager.getConnection(url, user, pass);
 
 		} catch (Exception ex) {
 

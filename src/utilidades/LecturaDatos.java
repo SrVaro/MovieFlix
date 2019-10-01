@@ -1,15 +1,18 @@
 package utilidades;
-/**
- * 
- * Autor Andres
- * 
- * Version 0.1
- */
 
+/** 
+ * 
+ * @author Andres
+ * 
+ * @version 0.1
+ * 
+ * @fecha 30/09/2019
+ *
+ */
 import java.util.Scanner;
 
 /**
- * 
+ * @author Andres
  * Se pide un entero por Scanner
  */
 public class LecturaDatos {
@@ -25,7 +28,7 @@ public class LecturaDatos {
 	}
 
 	/**
-	 * 
+	 * @author Andres
 	 * Se pide un String por Scanner
 	 */
 	@SuppressWarnings("resource")
