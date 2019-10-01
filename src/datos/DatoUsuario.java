@@ -19,12 +19,12 @@ import utilidades.LecturaDatos;
  *
  */
 
-public class DatoUsuario implements IDatoUsuario{
-	
+public class DatoUsuario implements IDatoUsuario {
+
 	public DatoUsuario() {
-		
+
 	}
-	
+
 	/**
 	 * @author M Carmen
 	 * 
@@ -48,22 +48,22 @@ public class DatoUsuario implements IDatoUsuario{
 		}
 		return exito;
 	}
-	
+
 	/**
 	 * 
 	 * @author Andres
 	 * 
 	 * @date 01/10/2019
 	 * 
-	 * metodo dar de alta a un usuario
+	 *       metodo dar de alta a un usuario
 	 */
-
 
 	public static boolean altaUsuario(Usuario u) {
 
 		boolean exito = true;
 
-		String SSQL = "INSERT INTO usuario (nombre, apellido1, apellido2, fechaNacimiento, ciudad) " + "VALUES (?, ?, ?, ?, ?)";
+		String SSQL = "INSERT INTO usuario (nombre, apellido1, apellido2, fechaNacimiento, ciudad) "
+				+ "VALUES (?, ?, ?, ?, ?)";
 
 		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
 
@@ -73,18 +73,45 @@ public class DatoUsuario implements IDatoUsuario{
 			psql.setDate(4, u.getFechaNacimiento());
 			psql.setString(5, u.getCiudadNacimiento());
 
-			int resultado = psql.executeUpdate();
-
 			psql.close();
 			// conexion
 
 		} catch (SQLException e) {
-			
-		
+
 			InterfazGrafica.mensajeError();
 
 		}
 
 		return exito;
 	}
+
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 *       metodo actualizar un usuario
+	 */
+
+	public static boolean actualizarUsuario(Usuario u, int id) {
+		boolean exito = true;
+
+		String sSQL = "UPDATE usuario SET nombre=?, apellido1=?, apellido2=?, fechaNacimiento=?, ciudad=? WHERE idUsuario=?";
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement pstm = con.prepareStatement(sSQL);) {
+			pstm.setString(1, u.getNombre());
+			pstm.setString(2, u.getApellido1());
+			pstm.setString(3, u.getApellido2());
+			pstm.setDate(4, u.getFechaNacimiento());
+			pstm.setString(5, u.getCiudadNacimiento());
+			pstm.setInt(6, id);
+			pstm.executeUpdate();
+
+		} catch (SQLException e) {
+			// InterfazGrafica.mensajeError();
+
+		}
+		return exito;
+	}
+
 }
