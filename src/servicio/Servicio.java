@@ -72,4 +72,16 @@ public class Servicio implements IServicio {
 		//dp.listarPeliculasMayMen();
 	}
 
+	@Override
+	public void listarPeliculasVal() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void listarPeliculasNoVistas() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -15,6 +15,7 @@ import modelo.Pelicula;
 public interface IDatoPelicula {
 
 	public boolean altaPelicula(Pelicula p);
+
 	public boolean listarPeliculasCat(String categoria);
 
 }

@@ -93,9 +93,8 @@ public class DatoUsuario implements IDatoUsuario {
 	public boolean peliculasUsuario(int ID) {
 		boolean exito = true;
 
-		String SQL = "SELECT * FROM usuariocategoria WHERE idUsuario = ?";
-
-		ArrayList<String> categoriasUsuario = new ArrayList<>();
+		String SQL = "SELECT P.nombre FROM pelicula P \r\n" + "WHERE P.categoria \r\n" + "IN (SELECT UC.categoria\r\n"
+				+ "     FROM usuariocategoria UC\r\n" + "     WHERE UC.idUsuario = ? );";
 
 		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
 
@@ -103,33 +102,13 @@ public class DatoUsuario implements IDatoUsuario {
 
 			try (ResultSet rs = p.executeQuery();) {
 				while (rs.next()) {
-					categoriasUsuario.add(rs.getString(3));
+					System.out.println((rs.getString(1)));
 				}
 			}
 		} catch (SQLException e) {
 			exito = false;
 			e.printStackTrace();
 		}
-
-		for (String categoria : categoriasUsuario) {
-
-			SQL = "SELECT * FROM pelicula WHERE categoria = ?";
-
-			try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
-
-				p.setString(1, categoria);
-
-				try (ResultSet rs = p.executeQuery();) {
-					while (rs.next()) {
-						System.out.println(rs.getString(2));
-					}
-				}
-			} catch (SQLException e) {
-				exito = false;
-				e.printStackTrace();
-			}
-		}
-
 		return exito;
 	}
 
@@ -139,7 +118,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 * 
 	 * @date 01/10/2019
 	 * 
-	 *       metodo dar de alta a un usuario
+	 *       Dar de alta a un usuario en la base de datos
 	 */
 	@Override
 	public boolean altaUsuario(Usuario u) {
@@ -200,9 +179,8 @@ public class DatoUsuario implements IDatoUsuario {
 	public boolean listarPeliculasNoVistas(int id) {
 		boolean exito = true;
 
-		String SQL = "SELECT * FROM pelicula P LEFT JOIN REGISTRO AS R ON P.idPelicula=R.idPelicula WHERE R.idUsuario != 1 OR R.idUsuario IS NULL;";
-
-		ArrayList<String> categoriasUsuario = new ArrayList<>();
+		String SQL = "SELECT P.nombre FROM pelicula P \r\n" + "WHERE P.idPelicula \r\n"
+				+ "NOT IN (SELECT R.idPelicula\r\n" + "     FROM registro R\r\n" + "     WHERE R.idUsuario = ? );";
 
 		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
 
@@ -210,7 +188,7 @@ public class DatoUsuario implements IDatoUsuario {
 
 			try (ResultSet rs = p.executeQuery();) {
 				while (rs.next()) {
-					categoriasUsuario.add(rs.getString(3));
+					System.out.println(rs.getString(1));
 				}
 			}
 		} catch (SQLException e) {
@@ -218,7 +196,7 @@ public class DatoUsuario implements IDatoUsuario {
 			e.printStackTrace();
 		}
 
-		return false;
+		return exito;
 	}
 
 }

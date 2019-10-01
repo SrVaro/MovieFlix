@@ -19,10 +19,15 @@ import modelo.Usuario;
 public interface IDatoUsuario {
 
 	public boolean bajaUsuario(int ID);
+
 	public boolean peliculasUsuario(int ID);
+
 	public boolean altaUsuario(Usuario u);
+
 	public boolean actualizarUsuario(Usuario u, int id);
+
 	public boolean listarUsuarios();
+
 	public boolean listarPeliculasNoVistas(int id);
 
 }
