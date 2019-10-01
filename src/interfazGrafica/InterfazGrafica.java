@@ -33,6 +33,30 @@ public class InterfazGrafica {
 	}
 
 	/**
+	 * 
+	 * @autor Mª José
+	 * 
+	 * @date 30/09/2019
+	 * 
+	 *       Método que muestra el menú
+	 * 
+	 */
+
+	public static void mostrarMenu() {
+
+		System.out.println("Elija una de las siguientes opciones:");
+		System.out.println("*-------------------------------------------------------*");
+		System.out.println("1: Dar de alta películas.");
+		System.out.println("2: Dar de alta usuarios.");
+		System.out.println("3: Dar de baja usuarios.");
+		System.out.println("4: Modificar usuarios.");
+		System.out.println("5: Listado películas disponibles para el usuario.");
+		System.out.println("6: Litado de todas las películas.");
+		System.out.println("7: Listado de películas por categoria.");
+		System.out.println("*-------------------------------------------------------*");
+	}
+
+	/**
 	 * @author M Carmen
 	 * 
 	 *         mensajes para dar de alta una pelicula
@@ -56,27 +80,44 @@ public class InterfazGrafica {
 	}
 
 	/**
-	 * 
-	 * @autor Mª José
+	 * @author M Carmen
 	 * 
 	 * @date 30/09/2019
 	 * 
-	 *       Método que muestra el menú
-	 * 
+	 *       mensajes para dar de alta un usuario
 	 */
 
-	public static void mostrarMenu() {
+	public static void mensajeNombreUsuario() {
+		System.out.println("\nIntroduzca el nombre de usuario:");
+	}
 
-		System.out.println("Elija una de las siguientes opciones:");
-		System.out.println("*-------------------------------------------------------*");
-		System.out.println("1: Dar de alta películas.");
-		System.out.println("2: Dar de alta usuarios.");
-		System.out.println("3: Dar de baja usuarios.");
-		System.out.println("4: Modificar usuarios.");
-		System.out.println("5: Listado películas disponibles para el usuario.");
-		System.out.println("6: Litado de todas las películas.");
-		System.out.println("7: Listado de películas por categoria.");
-		System.out.println("*-------------------------------------------------------*");
+	public static void mensajeApellido1Usuario() {
+		System.out.println("\nIntroduzca primer apellido:");
+	}
+
+	public static void mensajeApellido2Usuario() {
+		System.out.println("\nIntroduzca segundo apellido");
+	}
+
+	public static void mensajeFechaNacimientoUsuario() {
+		System.out.println("\n Introduzca la fecha de nacimiento (yyyy-MM-dd):");
+	}
+
+	public static void mensajeCiudadUsuario() {
+		System.out.println("\n Introduzca ciudad del usuario:");
+	}
+
+	/**
+	 * @author M Carmen
+	 * 
+	 * @date 30/09/2019
+	 * 
+	 *       mensaje de error
+	 */
+	public static void mensajeError() {
+
+		System.out.println("\nError al introducir los datos, vuelva a intentarlo:");
+
 	}
 
 }
