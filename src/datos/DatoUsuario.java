@@ -33,7 +33,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 * 
 	 * @date 30/09/2019
 	 * 
-	 *       da de baja a un usuario
+	 *       Da de baja a un usuario
 	 */
 	public boolean bajaUsuario(int ID) {
 		boolean exito = true;
@@ -57,7 +57,35 @@ public class DatoUsuario implements IDatoUsuario {
 	 * 
 	 * @date 1/09/2019
 	 * 
-	 *       Devuelve todas las peliculas que tiene disponible un usuario
+	 *       Lista de todos los usuarios
+	 */
+	public boolean listarUsuarios() {
+		boolean exito = true;
+
+		String SQL = "SELECT * FROM usuario";
+
+		try (Connection con = GestorBDD.Conectar();
+				PreparedStatement p = con.prepareStatement(SQL);
+				ResultSet rs = p.executeQuery()) {
+
+			while (rs.next()) {
+				System.out.println(rs.getString(2));
+			}
+
+		} catch (SQLException e) {
+			exito = false;
+			e.printStackTrace();
+		}
+
+		return exito;
+	}
+
+	/**
+	 * @author Varo
+	 * 
+	 * @date 1/09/2019
+	 * 
+	 *       Lista todas las peliculas que tiene disponible un usuario
 	 */
 	public boolean peliculasUsuario(int ID) {
 		boolean exito = true;
