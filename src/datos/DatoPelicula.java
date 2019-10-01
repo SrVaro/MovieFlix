@@ -59,7 +59,7 @@ public class DatoPelicula {
 	 *       muestra listado de peliculas
 	 *
 	 */
-	public static boolean listarPeliculas() {
+	public boolean listarPeliculas() {
 
 		boolean exito = true;
 
@@ -76,7 +76,7 @@ public class DatoPelicula {
 		} catch (SQLException e) {
 
 			InterfazGrafica.mensajeErrorBbdd();
-			exito=false;
+			exito = false;
 		}
 
 		return exito;
@@ -113,4 +113,34 @@ public class DatoPelicula {
 		return exito;
 	}
 
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 *       metodo listar pelicula por categoria
+	 */
+	public boolean listarPeliculasMayMen() {
+
+		boolean exito = true;
+
+		String SSQL = "SELECT * FROM pelicula ORDER BY visualizaciones DESC";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+
+			ResultSet x = psql.executeQuery();
+
+			while (x.next()) {
+				System.out.println(x.getString(2));
+			}
+
+		} catch (SQLException e) {
+
+			InterfazGrafica.mensajeErrorBbdd();
+			exito = false;
+		}
+
+		return exito;
+	}
 }
