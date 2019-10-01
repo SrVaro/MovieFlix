@@ -259,5 +259,37 @@ public class DatoPelicula {
 		return exito;
 	}
 	
+	
 
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 * @date 01/10/19
+	 * 
+	 *  metodo para listar categorias
+	 */
+	
+	public boolean listarCategorias() {
+
+		boolean exito = true;
+
+		String SSQL = "SELECT * FROM categoria";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+
+			ResultSet x = psql.executeQuery();
+
+			while (x.next()) {
+				System.out.println(x.getString(1));
+			}
+
+		} catch (SQLException e) {
+
+			InterfazGrafica.mensajeErrorBbdd();
+			exito = false;
+		}
+
+		return exito;
+	}
 }
