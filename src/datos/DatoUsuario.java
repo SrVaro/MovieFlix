@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bdd.GestorBDD;
+import interfazGrafica.InterfazGrafica;
+import modelo.Usuario;
+import utilidades.LecturaDatos;
 
 /**
  * 
@@ -45,6 +48,43 @@ public class DatoUsuario implements IDatoUsuario{
 		}
 		return exito;
 	}
+	
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 * metodo dar de alta a un usuario
+	 */
 
 
+	public static boolean altaUsuario(Usuario u) {
+
+		boolean exito = true;
+
+		String SSQL = "INSERT INTO usuario (nombre, apellido1, apellido2, fechaNacimiento, ciudad) " + "VALUES (?, ?, ?, ?, ?)";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+
+			psql.setString(1, u.getNombre());
+			psql.setString(2, u.getApellido1());
+			psql.setString(3, u.getApellido2());
+			psql.setDate(4, u.getFechaNacimiento());
+			psql.setString(5, u.getCiudadNacimiento());
+
+			int resultado = psql.executeUpdate();
+
+			psql.close();
+			// conexion
+
+		} catch (SQLException e) {
+			
+		
+			InterfazGrafica.mensajeError();
+
+		}
+
+		return exito;
+	}
 }
