@@ -22,7 +22,20 @@ public class LecturaDatos {
 
 	@SuppressWarnings("resource")
 	public static int LeerInt() {
-		return new Scanner(System.in).nextInt();
+
+		boolean bandera = false;
+		int num = 0;
+		do {
+			bandera = false;
+			try {
+				num = new Scanner(System.in).nextInt();
+			} catch (Exception e) {
+				bandera = true;
+				InterfazGrafica.mensajeError();
+			}
+
+		} while (bandera == true);
+		return num;
 	}
 
 	public static int LeerInt(String mensaje) {
@@ -35,7 +48,9 @@ public class LecturaDatos {
 	 */
 	@SuppressWarnings("resource")
 	public static String LeerString() {
+
 		return new Scanner(System.in).nextLine();
+
 	}
 
 	public static String LeerString(String mensaje) {
@@ -58,6 +73,10 @@ public class LecturaDatos {
 				date = Date.valueOf(LecturaDatos.LeerString());
 				correct = true;
 			} catch (IllegalArgumentException e) {
+
+				// InterfazGrafica.wrongData();
+				correct = false;
+
 				InterfazGrafica.mensajeError();
 			}
 		}
