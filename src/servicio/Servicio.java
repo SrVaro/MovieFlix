@@ -55,12 +55,12 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void listarPeliculas() {
-		// dp.listarPeliculas();
+		dp.listarPeliculas();
 	}
 	
 	@Override
 	public void listarPeliculasCat() {
-		// dp.listarPeliculasCat();
+		//dp.listarPeliculasCat();
 	}
 	
 	@Override
@@ -68,9 +68,20 @@ public class Servicio implements IServicio {
 		du.listarUsuarios();
 	}
 	
+	@Override
 	public void listarPeliculasMayMen() {
 		dp.listarPeliculasMayMen();
 	}
+
+	@Override
+	public void listarPeliculasVal() {
+		dp.listarPeliculasVal();
+	}
 	
+	@Override
+	public void listarPeliculasNoVistas() {
+		//dp.listarPeliculasNoVistas();
+	}
+
 
 }
