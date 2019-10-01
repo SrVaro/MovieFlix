@@ -79,4 +79,9 @@ public class InterfazGrafica {
 		System.out.println("*-------------------------------------------------------*");
 	}
 
+	public static void mensajeError() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

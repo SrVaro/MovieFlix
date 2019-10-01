@@ -2,14 +2,11 @@ package datos;
 
 import modelo.Pelicula;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-
-import javax.swing.JOptionPane;
 
 import bdd.GestorBDD;
+import interfazGrafica.InterfazGrafica;
 
 /**
  * 
@@ -33,16 +30,14 @@ public class DatoPelicula {
 
 			psql.setString(1, p.getNombre());
 			psql.setInt(2, p.getAnnoEstreno());
-			psql.setString(3, p.getCategoria().toString());
-
-			int resultado = psql.executeUpdate();
+			psql.setString(3, p.getCategoria().toString().toLowerCase());
 
 			psql.close();
 			// conexion
 
 		} catch (SQLException e) {
 
-			// InterfazGrafica.mensajeError();
+		 InterfazGrafica.mensajeError();
 
 		}
 
