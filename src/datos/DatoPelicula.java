@@ -58,7 +58,7 @@ public class DatoPelicula {
 	 *       muestra listado de peliculas
 	 *
 	 */
-	public static boolean listarPeliculas() {
+	public boolean listarPeliculas() {
 
 		boolean exito = true;
 
@@ -80,5 +80,23 @@ public class DatoPelicula {
 
 		return exito;
 	}
+	
+	public boolean listarPeliculasVal() {
+		
+		boolean exito = true;
+		
+		String SSQL = "SELECT * FROM pelicula ORDER BY valoracion DESC";
+		
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+            ResultSet x = psql.executeQuery();
+            while (x.next()) {
+                System.out.println(x.getString(2));
+            }
+        } catch (SQLException e) {
+            InterfazGrafica.mensajeErrorBbdd();
+            exito = false;
+        }
+        return exito;
+    }
 
-}
+	}
