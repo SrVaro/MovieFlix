@@ -2,7 +2,7 @@ package interfazGrafica;
 
 import modelo.Pelicula;
 
-/** 
+/**
  * 
  * @author Andres
  * 
@@ -84,7 +84,7 @@ public class InterfazGrafica {
 	 * 
 	 * @date 30/09/2019
 	 * 
-	 *       mensajes para dar de alta un usuario
+	 *       Mensajes para dar de alta un usuario
 	 */
 
 	public static void mensajeNombreUsuario() {

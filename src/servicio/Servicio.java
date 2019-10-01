@@ -38,6 +38,12 @@ public class Servicio implements IServicio {
 
 	}
 
+	@Override
+	public void actualizarUsuario() {
+		//du.actualizarUsuario(FactoriaUsuario.pedirUsuario, id);
+		
+	}
+
 
 
 }

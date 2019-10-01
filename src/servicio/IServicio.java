@@ -12,5 +12,6 @@ public interface IServicio {
 	public void altaPelicula();
 	public void altaUsuario();
 	public void bajaUsuario();
+	public void actualizarUsuario();
 }
 
