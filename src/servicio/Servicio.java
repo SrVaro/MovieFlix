@@ -82,5 +82,21 @@ public class Servicio implements IServicio {
 	public void listarPeliculasNoVistas() {
 		du.listarPeliculasNoVistas(LecturaDatos.LeerInt("Introduce el id del usuario"));
 	}
+	
+	public void listarPeliculasRec() {
+		//dp.listarPeliculasRec()
+	}
+	@Override
+	public void listarPeliculaActual() {
+		//dp.listarPeliculaActual();
+	}
+	
+	public void listarCategorias() {
+		//dp.listarCategorias();
+	}
+	
+	public void bajaPelicula() {
+		//dp.bajaPelicula();
+	}
 
 }

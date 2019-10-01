@@ -71,6 +71,17 @@ public class Control {
 			case 11:
 				s.listarPeliculasNoVistas();
 				break;
+			case 12:
+				s.listarPeliculasRec();
+				break;
+			case 13:
+				s.listarPeliculaActual();
+				break;
+			case 14:
+				s.listarCategorias();
+				break;
+			case 15:
+				s.bajaPelicula();
 			}
 			InterfazGrafica.mostrarMenuPausa();
 			LecturaDatos.LeerString();
