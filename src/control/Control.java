@@ -14,6 +14,9 @@ import utilidades.LecturaDatos;
  */
 
 public class Control {
+	
+	private static Servicio s = new Servicio();
+	
 	public Control() {
 
 	}
@@ -33,11 +36,13 @@ public class Control {
 		switch (opcion) {
 
 		case 1:
-			// Servicio.altaPelicula();
+			// s.altaPelicula();
 			break;
 		case 2:
+			s.altaUsuario();
 			break;
 		case 3:
+			s.bajaUsuario();
 			break;
 		case 4:
 			break;
