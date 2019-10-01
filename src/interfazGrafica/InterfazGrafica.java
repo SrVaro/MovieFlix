@@ -55,7 +55,11 @@ public class InterfazGrafica {
 		System.out.println("7: Listado de películas por categoria.");
 		System.out.println("8: Listar Usuarios");
 		System.out.println("9: Listado de películas por visualizaciones de mayor a menor");
+		System.out.println("0: Para salir.");
 		System.out.println("*-------------------------------------------------------*");
+	}
+	public static void mostrarMenuPausa(){
+		System.out.println("\n PUlse cualquier tecla para continuar");
 	}
 
 	/**
@@ -80,7 +84,9 @@ public class InterfazGrafica {
 		System.out.println("\tPonga 5 para seleccionar categoria ANIMACION");
 		System.out.println("\tPonga 6 para seleccionar categoria THRILLER");
 	}
-
+	public static void mensajeValPelicula() {
+		System.out.println("\nIntroduzca valoración de la película:");
+	}
 	/**
 	 * @author M Carmen
 	 * 

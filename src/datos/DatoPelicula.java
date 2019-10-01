@@ -131,7 +131,7 @@ public class DatoPelicula {
 					break;
 				}
 
-				altaPelicula(new Pelicula(nombre, anno, categoria));
+				altaPelicula(new Pelicula(nombre, anno, categoria, (int)(Math.random() * 5)));
 
 			}
 		} catch (Exception e) {
