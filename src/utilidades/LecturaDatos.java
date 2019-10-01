@@ -16,8 +16,7 @@ import java.util.Scanner;
 import interfazGrafica.InterfazGrafica;
 
 /**
- * @author Andres
- * Se pide un entero por Scanner
+ * @author Andres Se pide un entero por Scanner
  */
 public class LecturaDatos {
 
@@ -32,8 +31,7 @@ public class LecturaDatos {
 	}
 
 	/**
-	 * @author Andres
-	 * Se pide un String por Scanner
+	 * @author Andres Se pide un String por Scanner
 	 */
 	@SuppressWarnings("resource")
 	public static String LeerString() {
@@ -44,25 +42,25 @@ public class LecturaDatos {
 		System.out.println(mensaje);
 		return LeerString();
 	}
-	
+
 	/**
 	 * 
 	 * @author Andres
 	 * 
 	 */
 	public static Date LeerFecha() {
-	
-	//InterfazGrafica.mensajeFechaNacimientoUsuario();
-	boolean correct = false;
-    Date date = null;
-    while (!correct) {
-        try {
-            date = Date.valueOf(LecturaDatos.LeerString());
-            correct = true;
-        } catch (IllegalArgumentException e) {
-            InterfazGrafica.mensajeError();
-        }
-    }
-    return date;
-}
+
+		// InterfazGrafica.mensajeFechaNacimientoUsuario();
+		boolean correct = false;
+		Date date = null;
+		while (!correct) {
+			try {
+				date = Date.valueOf(LecturaDatos.LeerString());
+				correct = true;
+			} catch (IllegalArgumentException e) {
+				InterfazGrafica.mensajeError();
+			}
+		}
+		return date;
+	}
 }

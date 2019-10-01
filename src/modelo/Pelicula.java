@@ -20,14 +20,12 @@ public class Pelicula {
 	public Pelicula() {
 
 	}
-	
 
 	public Pelicula(String nombre, int annoEstreno, CATEGORIA categoria) {
 		this.nombre = nombre;
 		this.annoEstreno = annoEstreno;
 		this.categoria = categoria;
 	}
-
 
 	public String getNombre() {
 		return nombre;

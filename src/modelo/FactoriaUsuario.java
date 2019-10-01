@@ -33,16 +33,16 @@ public class FactoriaUsuario {
 
 		InterfazGrafica.mensajeNombreUsuario();
 		String nombre = LecturaDatos.LeerString();
-		
+
 		InterfazGrafica.mensajeApellido1Usuario();
 		String apellido1 = LecturaDatos.LeerString();
-		
+
 		InterfazGrafica.mensajeApellido2Usuario();
 		String apellido2 = LecturaDatos.LeerString();
-		
+
 		InterfazGrafica.mensajeFechaNacimientoUsuario();
 		Date fechaNacimiento = LecturaDatos.LeerFecha();
-		
+
 		InterfazGrafica.mensajeCiudadUsuario();
 		String CiudadNacimiento = LecturaDatos.LeerString();
 

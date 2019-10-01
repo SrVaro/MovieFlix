@@ -32,12 +32,11 @@ public class DatoPelicula {
 			psql.setInt(2, p.getAnnoEstreno());
 			psql.setString(3, p.getCategoria().toString().toLowerCase());
 
-			psql.close();
-			// conexion
+			psql.execute();
 
 		} catch (SQLException e) {
 
-		 InterfazGrafica.mensajeError();
+			InterfazGrafica.mensajeError();
 
 		}
 

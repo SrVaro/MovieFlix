@@ -98,7 +98,7 @@ public class DatoUsuario implements IDatoUsuario {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return exito;
 	}
 
@@ -111,7 +111,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 *       metodo dar de alta a un usuario
 	 */
 
-	public static boolean altaUsuario(Usuario u) {
+	public boolean altaUsuario(Usuario u) {
 
 		boolean exito = true;
 
@@ -125,6 +125,8 @@ public class DatoUsuario implements IDatoUsuario {
 			psql.setString(3, u.getApellido2());
 			psql.setDate(4, u.getFechaNacimiento());
 			psql.setString(5, u.getCiudadNacimiento());
+
+			psql.execute();
 
 		} catch (SQLException e) {
 
@@ -144,7 +146,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 *       Metodo actualizar un usuario
 	 */
 
-	public static boolean actualizarUsuario(Usuario u, int id) {
+	public boolean actualizarUsuario(Usuario u, int id) {
 		boolean exito = true;
 
 		String sSQL = "UPDATE usuario SET nombre=?, apellido1=?, apellido2=?, fechaNacimiento=?, ciudad=? WHERE idUsuario=?";
