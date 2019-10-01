@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bdd.GestorBDD;
+import modelo.Usuario;
 
 /**
  * 
@@ -18,5 +19,8 @@ import bdd.GestorBDD;
 public interface IDatoUsuario {
 
 	public boolean bajaUsuario(int ID);
+	public boolean peliculasUsuario(int ID);
+	public boolean altaUsuario(Usuario u);
+	public boolean actualizarUsuario(Usuario u, int id);
 
 }
