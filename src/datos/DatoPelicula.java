@@ -2,9 +2,10 @@ package datos;
 
 import modelo.Pelicula;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import bdd.GestorBDD;
+import interfazGrafica.InterfazGrafica;
 
 /**
  * 
@@ -25,7 +27,7 @@ import bdd.GestorBDD;
 
 public class DatoPelicula {
 
-	public static boolean altaPelicula(Pelicula p) {
+	public boolean altaPelicula(Pelicula p) {
 
 		boolean exito = true;
 
@@ -35,49 +37,45 @@ public class DatoPelicula {
 
 			psql.setString(1, p.getNombre());
 			psql.setInt(2, p.getAnnoEstreno());
-			psql.setString(3, p.getCategoria().toString());
+			psql.setString(3, p.getCategoria().toString().toLowerCase());
 
-			int resultado = psql.executeUpdate();
-
-			psql.close();
-			// conexion
+			psql.execute();
 
 		} catch (SQLException e) {
 
-			// InterfazGrafica.mensajeError();
+			InterfazGrafica.mensajeError();
 
 		}
 
 		return exito;
 	}
+
 	/**
 	 * @author M Carmen
 	 * 
 	 * @date 01/10/2019
 	 * 
-	 * muestra listado de peliculas
+	 *       muestra listado de peliculas
 	 *
 	 */
 	public static boolean listarPeliculas() {
-		
-		List <Pelicula> x= new ArrayList <Pelicula>();
-		
-		boolean exito=true;
-		
-		String SSQL = "SELECT DISTINCT * FROM pelicula";
+
+		boolean exito = true;
+
+		String SSQL = "SELECT * FROM pelicula";
 
 		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
 
+			ResultSet x = psql.executeQuery();
 
-			  psql.executeUpdate();
-
-			psql.close();
-			// conexion
+			while (x.next()) {
+				System.out.println(x.getString(2));
+			}
 
 		} catch (SQLException e) {
 
 			// InterfazGrafica.mensajeError();
-			
+			exito=false;
 		}
 
 		return exito;

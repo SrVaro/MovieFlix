@@ -44,7 +44,7 @@ public class FactoriaPelicula {
 				categoria = CATEGORIA.ROMANTICA;
 				break;
 			case 3:
-				categoria = CATEGORIA.AVENTURAS;
+				categoria = CATEGORIA.AVENTURA;
 				break;
 			case 4:
 				categoria = CATEGORIA.COMEDIA;
@@ -56,7 +56,9 @@ public class FactoriaPelicula {
 				categoria = CATEGORIA.THRILLER;
 				break;
 			}
+
 		} while (opcion < 1 && opcion > 6);
+
 		return new Pelicula(nombre, annoEstreno, categoria);
 	}
 

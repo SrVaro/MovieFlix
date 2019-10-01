@@ -1,6 +1,6 @@
 package modelo;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Usuario {
 
@@ -75,7 +75,5 @@ public class Usuario {
 		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
 				+ ", fechaNacimiento=" + fechaNacimiento + ", ciudadNacimiento=" + ciudadNacimiento + "]";
 	}
-	
-	
 
 }

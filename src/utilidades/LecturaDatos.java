@@ -73,8 +73,10 @@ public class LecturaDatos {
 				date = Date.valueOf(LecturaDatos.LeerString());
 				correct = true;
 			} catch (IllegalArgumentException e) {
+
 				// InterfazGrafica.wrongData();
 				correct = false;
+
 				InterfazGrafica.mensajeError();
 			}
 		}

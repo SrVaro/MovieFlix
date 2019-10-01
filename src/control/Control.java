@@ -1,5 +1,6 @@
 package control;
 
+import interfazGrafica.InterfazGrafica;
 import servicio.Servicio;
 import utilidades.LecturaDatos;
 
@@ -12,11 +13,10 @@ import utilidades.LecturaDatos;
  * @date 30/09/2019
  * 
  */
-
 public class Control {
-	
+
 	private static Servicio s = new Servicio();
-	
+
 	public Control() {
 
 	}
@@ -30,13 +30,14 @@ public class Control {
 	public static void empezarPrograma() {
 
 		int opcion;
-		// llamar a interfazGrafica menu1
+		InterfazGrafica.mostrarMenu();
+
 		opcion = LecturaDatos.LeerInt();
 
 		switch (opcion) {
 
 		case 1:
-			// s.altaPelicula();
+			s.altaPelicula();
 			break;
 		case 2:
 			s.altaUsuario();
@@ -45,8 +46,10 @@ public class Control {
 			s.bajaUsuario();
 			break;
 		case 4:
+			s.actualizarUsuario();
 			break;
 		case 5:
+			s.peliculaUsuario();
 			break;
 		}
 
