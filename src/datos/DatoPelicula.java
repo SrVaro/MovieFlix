@@ -52,8 +52,19 @@ public class DatoPelicula {
 
 		try (FileReader fr = new FileReader(archivo); BufferedReader br = new BufferedReader(fr)) {
 			String linea;
-			while ((linea = br.readLine()) != null)
-				System.out.println(linea);
+			while ((linea = br.readLine()) != null) {
+				String[] atributosPelicula= linea.split(",");
+				
+				String nombre = atributosPelicula[0];
+				
+				int anno = Integer.parseInt(atributosPelicula[1]);
+				
+				String categoria = atributosPelicula[2];
+				
+				//altaPelicula(new Pelicula(nombre, anno, categoria));
+				
+				
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
