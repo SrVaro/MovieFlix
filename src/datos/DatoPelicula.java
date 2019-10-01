@@ -1,6 +1,10 @@
 package datos;
 
 import modelo.Pelicula;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -41,6 +45,20 @@ public class DatoPelicula {
 		}
 
 		return exito;
+	}
+
+	public boolean importarPeliculasTXT() {
+		File archivo = new File("peliculas_cat.txt");
+
+		try (FileReader fr = new FileReader(archivo); BufferedReader br = new BufferedReader(fr)) {
+			String linea;
+			while ((linea = br.readLine()) != null)
+				System.out.println(linea);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return true;
 	}
 
 }

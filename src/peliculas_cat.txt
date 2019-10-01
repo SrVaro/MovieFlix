@@ -1,0 +1,81 @@
+La vida es bella,1997,romantica
+Intocable,2011,comedia
+Regreso al futuro,1985,comedia
+El gran dictador,1940,comedia
+Luces de la ciudad,1931,comedia
+Forrest Gump,1994,comedia
+Casablanca,1942,romantica
+Amelia,2001,romantica
+El indomable Will Hunting,1997,romantica
+El Rey León,1994,animacion
+Coco,2017,animacion
+La princesa Mononoke,1997,animacion
+Up,2009,animacion
+Toy Story,1995,animacion
+Inside Out,2015,animacion
+Forrest Gump,1994,romantica
+El Club de los poetas muertos,1989,romantica
+El caballero oscuro,2008,thriller
+Origen,2010,thriller
+Sospechosos habituales,1995,thriller
+El apartamento,1960,romantica
+El secreto de tus ojos,2009,romantica
+Seven,1995,thriller
+El silencio de los corderos,1991,thriller
+Memento,2000,thriller
+El señor de los anillos: El retorno del rey,2003,aventuras
+Los siete samuráis,1954,aventuras
+Interstellar,2014,aventuras
+La guerra de las galaxias,1997,aventuras
+Gladiator,2000,aventuras
+El caso Bourne,2002,policiaca
+La noche de los cristales rotos,1991,policiaca
+Arma letal,1987,policiaca
+La jungla de cristal,1988,policiaca
+El padrino,1972,policiaca 
+Ciudad de Dios,2002,policiaca 
+Uno de los nuestros,1990,policiaca
+Pulp Fiction,1994,policiaca
+Avengers: Infinity War,2018,aventuras
+Jurassic World: Fallen Kingdom,2018,aventuras 
+Venom,2018,aventuras 
+Avatar,2009,aventuras 
+Deadpool,2016,comedia
+Un Lugar tranquilo,2018,thriller
+Lo imposible,2012,thriller
+Fargo,1996,policiaca
+Shutter Island,2010,policiaca
+El caballero oscuro,2008,thriller 
+TED 2,2015,comedia
+Harakiri,1962,romantica
+Titanic,1997,romantica
+Zootropolis,2016,animacion
+Your name,2016,animacion
+Dejame salir,2017,thriller
+Multiple,2016,thriller
+Resacon en Las Vegas,2009,comedia
+The others,2001,thriller
+El sexto sentido,1999,thriller
+La pelicula de los simpson,2014,animacion
+Fast & furious 8,2017,aventuras
+Harry Potter y el prisionero de azkaban,2004,aventuras
+Shrek,2001,animacion
+Corpse Bride,2005,animacion
+Spirit,2002,animacion
+A Silent Voice,2016,animacion
+El Diario de Noa,2004,romantica
+Bajo la misma estrella,2014,romantica
+Con derecho a roce,2011,romantica
+Postdata: Te Quiero,2007,romantica
+Pretty Woman,1990,romantica
+Juego de Ladrones. El atraco perfecto,2018,policiaca
+La isla siniestra,2010,policiaca
+Ralph Rompe internet,2018,animacion 
+Los increibles ,2004,animacion 
+Los intocables de Eliot Ness,1987,policiaca
+Bobby Z,2007,policiaca
+Deadpool,2016,comedia
+Ocho apellidos vascos,2014,comedia
+Scary Movie,2000,comedia
+La Mascara: Cero a Heroe,1994,comedia
+Dos tontos muy tontos,1994,comedia
