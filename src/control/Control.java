@@ -39,9 +39,9 @@ public class Control {
 			// s.altaPelicula();
 			break;
 		case 2:
+			s.altaUsuario();
 			break;
 		case 3:
-			
 			s.bajaUsuario();
 			break;
 		case 4:
