@@ -16,27 +16,25 @@ import java.util.Scanner;
 import interfazGrafica.InterfazGrafica;
 
 /**
- * @author Andres
- * Se pide un entero por Scanner
+ * @author Andres Se pide un entero por Scanner
  */
 public class LecturaDatos {
 
 	@SuppressWarnings("resource")
 	public static int LeerInt() {
-		
-		boolean bandera=false;
-		int num=0;
+
+		boolean bandera = false;
+		int num = 0;
 		do {
-			bandera=false;
-		try {
-			num=new Scanner(System.in).nextInt();
-		}
-		catch(Exception e) {
-			bandera=true;
-			InterfazGrafica.mensajeError();
-		}
-		
-		}while(bandera==true);
+			bandera = false;
+			try {
+				num = new Scanner(System.in).nextInt();
+			} catch (Exception e) {
+				bandera = true;
+				InterfazGrafica.mensajeError();
+			}
+
+		} while (bandera == true);
 		return num;
 	}
 
@@ -46,42 +44,40 @@ public class LecturaDatos {
 	}
 
 	/**
-	 * @author Andres
-	 * Se pide un String por Scanner
+	 * @author Andres Se pide un String por Scanner
 	 */
 	@SuppressWarnings("resource")
 	public static String LeerString() {
-	
-			return new Scanner(System.in).nextLine();
-		
-		
+
+		return new Scanner(System.in).nextLine();
+
 	}
 
 	public static String LeerString(String mensaje) {
 		System.out.println(mensaje);
 		return LeerString();
 	}
-	
+
 	/**
 	 * 
 	 * @author Andres
 	 * 
 	 */
 	public static Date LeerFecha() {
-	
-	//InterfazGrafica.mensajeFechaNacimientoUsuario();
-	boolean correct = false;
-    Date date = null;
-    while (!correct) {
-        try {
-            date = Date.valueOf(LecturaDatos.LeerString());
-            correct = true;
-        } catch (IllegalArgumentException e) {
-           // InterfazGrafica.wrongData();
-        	correct = false;
-        	InterfazGrafica.mensajeError();
-        }
-    }
-    return date;
-}
+
+		// InterfazGrafica.mensajeFechaNacimientoUsuario();
+		boolean correct = false;
+		Date date = null;
+		while (!correct) {
+			try {
+				date = Date.valueOf(LecturaDatos.LeerString());
+				correct = true;
+			} catch (IllegalArgumentException e) {
+				// InterfazGrafica.wrongData();
+				correct = false;
+				InterfazGrafica.mensajeError();
+			}
+		}
+		return date;
+	}
 }
