@@ -10,7 +10,6 @@ import bdd.GestorBDD;
 import interfazGrafica.InterfazGrafica;
 import modelo.Usuario;
 
-
 /**
  * 
  * @author M Carmen

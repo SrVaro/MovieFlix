@@ -28,8 +28,6 @@ public class Pelicula {
 		this.categoria = categoria;
 		this.valoracion = valoracion;
 	}
-	
-	
 
 	public int getValoracion() {
 		return valoracion;
@@ -68,7 +66,5 @@ public class Pelicula {
 		return "Pelicula [nombre=" + nombre + ", annoEstreno=" + annoEstreno + ", categoria=" + categoria
 				+ ", valoracion=" + valoracion + "]";
 	}
-
-	
 
 }
