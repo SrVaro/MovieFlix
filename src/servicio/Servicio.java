@@ -57,5 +57,15 @@ public class Servicio implements IServicio {
 	public void listarPeliculas() {
 		// dp.listarPeliculas();
 	}
+	
+	@Override
+	public void listarPeliculasCat() {
+		// dp.listarPeliculasCat();
+	}
+	
+	@Override
+	public void listarUsuario() {
+		// du.listarUsuario();
+	}
 
 }

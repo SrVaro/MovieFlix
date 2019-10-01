@@ -21,4 +21,9 @@ public interface IServicio {
 	public void peliculaUsuario();
 
 	public void listarPeliculas();
+	
+	public void listarPeliculasCat();
+	
+	public void listarUsuario();
 }
+

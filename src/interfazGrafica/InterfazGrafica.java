@@ -53,6 +53,7 @@ public class InterfazGrafica {
 		System.out.println("5: Listado películas disponibles para el usuario.");
 		System.out.println("6: Litado de todas las películas.");
 		System.out.println("7: Listado de películas por categoria.");
+		System.out.println();
 		System.out.println("*-------------------------------------------------------*");
 	}
 

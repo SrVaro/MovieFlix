@@ -51,6 +51,11 @@ public class Control {
 		case 5:
 			s.peliculaUsuario();
 			break;
+		case 6:
+			s.listarPeliculas();
+			break;
+		case 7: 
+			s.listarPeliculasCat();
 		}
 
 	}
