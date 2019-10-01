@@ -31,4 +31,6 @@ public interface IServicio {
 	public void listarPeliculasVal();
 
 	public void listarPeliculasNoVistas();
+
+	public void listarPeliculasRec();
 }

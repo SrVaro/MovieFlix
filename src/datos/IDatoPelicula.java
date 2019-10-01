@@ -25,4 +25,6 @@ public interface IDatoPelicula {
 	public boolean importarPeliculasTXT();
 
 	public boolean listarPeliculasVal();
+
+	public boolean listarPeliculasRec();
 }

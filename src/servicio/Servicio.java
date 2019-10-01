@@ -83,4 +83,8 @@ public class Servicio implements IServicio {
 		// dp.listarPeliculasNoVistas();
 	}
 
+	public void listarPeliculasRec() {
+	 dp.listarPeliculasRec();
+	}
+
 }
