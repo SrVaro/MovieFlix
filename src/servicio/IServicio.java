@@ -10,11 +10,7 @@ package servicio;
 public interface IServicio {
 	
 	public void altaPelicula();
-<<<<<<< HEAD
-
-=======
 	public void altaUsuario();
->>>>>>> AR
 	public void bajaUsuario();
 }
 
