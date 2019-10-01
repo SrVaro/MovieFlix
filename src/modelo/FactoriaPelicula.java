@@ -28,6 +28,8 @@ public class FactoriaPelicula {
 		int annoEstreno = (LecturaDatos.LeerInt());
 
 		CATEGORIA categoria = null;
+		//InterfazGrafica.mensajeValPelicula();
+		int valoracion=LecturaDatos.LeerInt();
 
 		int opcion = 0;
 
@@ -59,7 +61,7 @@ public class FactoriaPelicula {
 
 		} while (opcion < 1 && opcion > 6);
 
-		return new Pelicula(nombre, annoEstreno, categoria);
+		return new Pelicula(nombre, annoEstreno, categoria,valoracion);
 	}
 
 }
