@@ -64,8 +64,8 @@ public class Servicio implements IServicio {
 	}
 	
 	@Override
-	public void listarUsuario() {
-		// du.listarUsuario();
+	public void listarUsuarios() {
+		du.listarUsuarios();
 	}
 
 }
