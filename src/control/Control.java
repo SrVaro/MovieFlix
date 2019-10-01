@@ -45,8 +45,10 @@ public class Control {
 			s.bajaUsuario();
 			break;
 		case 4:
+			s.actualizarUsuario();
 			break;
 		case 5:
+			s.peliculaUsuario();
 			break;
 		}
 

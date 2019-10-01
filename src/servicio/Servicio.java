@@ -1,5 +1,4 @@
 package servicio;
-
 import datos.DatoPelicula;
 import datos.DatoUsuario;
 import interfazGrafica.InterfazGrafica;
@@ -18,6 +17,7 @@ import utilidades.LecturaDatos;
 public class Servicio implements IServicio {
 	
 	DatoUsuario du = new DatoUsuario();
+	DatoPelicula dp = new DatoPelicula();
 	
 	public Servicio() {
 		
@@ -25,6 +25,7 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void altaPelicula() {
+		dp.altaPelicula(FactoriaPelicula.pedirPelicula());
 
 	}
 	
@@ -42,6 +43,15 @@ public class Servicio implements IServicio {
 	public void actualizarUsuario() {
 		//du.actualizarUsuario(FactoriaUsuario.pedirUsuario, id);
 		
+	}
+	
+	public void peliculaUsuario() {
+		// du.peliculaUsuario(LecturaDatos.LeerInt());
+		
+	}
+	
+	public void listarPeliculas() {
+		// dp.listarPeliculas();
 	}
 
 
