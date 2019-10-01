@@ -67,5 +67,9 @@ public class Servicio implements IServicio {
 	public void listarUsuarios() {
 		du.listarUsuarios();
 	}
+	
+	public void listarPeliculasMayMen() {
+		//dp.listarPeliculasMayMen();
+	}
 
 }

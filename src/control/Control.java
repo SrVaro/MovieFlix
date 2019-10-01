@@ -59,6 +59,10 @@ public class Control {
 			break;
 		case 8:
 			s.listarUsuarios();
+			break;
+		case 9:
+			s.listarPeliculasMayMen();
+			break;
 		}
 
 	}
