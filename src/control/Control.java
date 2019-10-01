@@ -29,7 +29,8 @@ public class Control {
 	 */
 	public static void empezarPrograma() {
 
-		int opcion;
+		int opcion=99;
+		while(opcion!=0) {
 		InterfazGrafica.mostrarMenu();
 
 		opcion = LecturaDatos.LeerInt();
@@ -51,7 +52,22 @@ public class Control {
 		case 5:
 			s.peliculaUsuario();
 			break;
+		case 6:
+			s.listarPeliculas();
+			break;
+		case 7: 
+			s.listarPeliculasCat();
+			break;
+		case 8:
+			s.listarUsuarios();
+			break;
+		case 9:
+			s.listarPeliculasMayMen();
+			break;
 		}
+		InterfazGrafica.mostrarMenuPausa();
+		LecturaDatos.LeerString();
+	}
 
 	}
 
