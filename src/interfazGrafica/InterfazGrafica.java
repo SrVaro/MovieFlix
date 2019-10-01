@@ -80,7 +80,9 @@ public class InterfazGrafica {
 		System.out.println("\tPonga 5 para seleccionar categoria ANIMACION");
 		System.out.println("\tPonga 6 para seleccionar categoria THRILLER");
 	}
-
+	public static void mensajeValPelicula() {
+		System.out.println("\nIntroduzca valoración de la película:");
+	}
 	/**
 	 * @author M Carmen
 	 * 

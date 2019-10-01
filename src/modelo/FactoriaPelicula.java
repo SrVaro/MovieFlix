@@ -28,7 +28,7 @@ public class FactoriaPelicula {
 		int annoEstreno = (LecturaDatos.LeerInt());
 
 		CATEGORIA categoria = null;
-		//InterfazGrafica.mensajeValPelicula();
+		InterfazGrafica.mensajeValPelicula();
 		int valoracion=LecturaDatos.LeerInt();
 
 		int opcion = 0;
