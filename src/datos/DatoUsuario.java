@@ -4,13 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import bdd.GestorBDD;
 import interfazGrafica.InterfazGrafica;
 import modelo.Usuario;
-import utilidades.LecturaDatos;
+
 
 /**
  * 

@@ -31,6 +31,7 @@ public class Control {
 
 		int opcion=99;
 		while(opcion!=0) {
+			
 		InterfazGrafica.mostrarMenu();
 
 		opcion = LecturaDatos.LeerInt();

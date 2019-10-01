@@ -2,7 +2,6 @@ package servicio;
 
 import datos.DatoPelicula;
 import datos.DatoUsuario;
-import interfazGrafica.InterfazGrafica;
 import modelo.FactoriaPelicula;
 import modelo.FactoriaUsuario;
 import utilidades.LecturaDatos;
@@ -55,12 +54,12 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void listarPeliculas() {
-		// dp.listarPeliculas();
+		 dp.listarPeliculas();
 	}
 	
 	@Override
 	public void listarPeliculasCat() {
-		// dp.listarPeliculasCat();
+		 //dp.listarPeliculasCat();
 	}
 	
 	@Override
@@ -69,7 +68,7 @@ public class Servicio implements IServicio {
 	}
 	
 	public void listarPeliculasMayMen() {
-		//dp.listarPeliculasMayMen();
+		dp.listarPeliculasMayMen();
 	}
 
 }
