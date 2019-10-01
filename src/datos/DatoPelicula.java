@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
+
 import bdd.GestorBDD;
 import interfazGrafica.InterfazGrafica;
 
@@ -222,5 +224,40 @@ public class DatoPelicula {
 
 		return true;
 	}
+	
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 *       metodo listar pelicula por categoria
+	 */
+	
+	public boolean listarPeliculaActual() {
+		boolean exito = true;
+		Calendar cal= Calendar.getInstance();
+		int year= cal.get(Calendar.YEAR);
+		String SSQL = "SELECT * FROM pelicula WHERE annoEstreno = ?";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+			
+			psql.setInt(1, year);
+
+			ResultSet x = psql.executeQuery();
+
+			while (x.next()) {
+				System.out.println(x.getString(2));
+			}
+
+		} catch (SQLException e) {
+
+			InterfazGrafica.mensajeErrorBbdd();
+			exito = false;
+		}
+
+		return exito;
+	}
+	
 
 }
