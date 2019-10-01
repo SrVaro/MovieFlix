@@ -69,7 +69,8 @@ public class Servicio implements IServicio {
 	}
 	
 	public void listarPeliculasMayMen() {
-		//dp.listarPeliculasMayMen();
+		dp.listarPeliculasMayMen();
 	}
+	
 
 }
