@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
+
 import bdd.GestorBDD;
 import interfazGrafica.InterfazGrafica;
 
@@ -220,6 +222,98 @@ public class DatoPelicula {
 		}
 
 		return true;
+	}
+
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 *       metodo listar pelicula por categoria
+	 */
+
+	public boolean listarPeliculaActual() {
+		boolean exito = true;
+		Calendar cal = Calendar.getInstance();
+		int year = cal.get(Calendar.YEAR);
+		String SSQL = "SELECT * FROM pelicula WHERE annoEstreno = ?";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+
+			psql.setInt(1, year);
+
+			ResultSet x = psql.executeQuery();
+
+			while (x.next()) {
+				System.out.println(x.getString(2));
+			}
+
+		} catch (SQLException e) {
+
+			InterfazGrafica.mensajeErrorBbdd();
+			exito = false;
+		}
+
+		return exito;
+	}
+
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 * @date 01/10/19
+	 * 
+	 *       metodo para listar categorias
+	 */
+
+	public boolean listarCategorias() {
+
+		boolean exito = true;
+
+		String SSQL = "SELECT * FROM categoria";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+
+			ResultSet x = psql.executeQuery();
+
+			while (x.next()) {
+				System.out.println(x.getString(1));
+			}
+
+		} catch (SQLException e) {
+
+			InterfazGrafica.mensajeErrorBbdd();
+			exito = false;
+		}
+
+		return exito;
+	}
+
+	/**
+	 * 
+	 * @author Andres
+	 * 
+	 * @date 01/10/19
+	 * 
+	 *       metodo para listar categorias
+	 */
+
+	public boolean bajaPelicula(int id) {
+		boolean exito = true;
+		String SQL = "DELETE FROM pelicula WHERE idPelicula=?";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
+
+			p.setInt(1, id);
+
+			p.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e);
+			exito = false;
+		}
+		return exito;
 	}
 
 }
