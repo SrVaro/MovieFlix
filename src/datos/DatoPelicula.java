@@ -168,6 +168,36 @@ public class DatoPelicula {
 
 		return exito;
 	}
+	/**
+	 * @author M Carmen
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 *  muestra listado de peliculas recomendadas
+	 */
+	public boolean listarPeliculasRec() {
+
+		boolean exito = true;
+
+		String SSQL = "SELECT * FROM pelicula WHERE recomendada=1";
+
+		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
+
+			ResultSet x = psql.executeQuery();
+
+			while (x.next()) {
+				System.out.println(x.getString(2));
+			}
+
+		} catch (SQLException e) {
+
+			InterfazGrafica.mensajeErrorBbdd();
+			exito = false;
+		}
+
+		return exito;
+	}
+	
 
 	/**
 	 * @author Varo

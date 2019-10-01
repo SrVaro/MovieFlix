@@ -31,4 +31,7 @@ public interface IDatoPelicula {
 	public boolean listarCategorias();
 
 	public boolean bajaPelicula(int ID);
+
+	public boolean listarPeliculasRec();
+
 }
