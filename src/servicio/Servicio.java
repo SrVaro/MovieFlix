@@ -59,7 +59,7 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void listarPeliculasCat() {
-		// dp.listarPeliculasCat();
+		dp.listarPeliculasCat(LecturaDatos.LeerString("Introduce una categoria"));
 	}
 
 	@Override
@@ -82,22 +82,25 @@ public class Servicio implements IServicio {
 	public void listarPeliculasNoVistas() {
 		du.listarPeliculasNoVistas(LecturaDatos.LeerInt("Introduce el id del usuario"));
 	}
-	
+
+	@Override
 	public void listarPeliculasRec() {
-		//dp.listarPeliculasRec()
+		dp.listarPeliculasRec();
 	}
 
 	@Override
 	public void listarPeliculaActual() {
-		//dp.listarPeliculaActual();
+		dp.listarPeliculaActual();
 	}
-	
+
+	@Override
 	public void listarCategorias() {
-		//dp.listarCategorias();
+		dp.listarCategorias();
 	}
-	
+
+	@Override
 	public void bajaPelicula() {
-		//dp.bajaPelicula();
+		dp.bajaPelicula(LecturaDatos.LeerInt("Introduce el id de la pelicula"));
 	}
 
 }
