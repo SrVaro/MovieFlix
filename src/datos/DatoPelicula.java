@@ -169,12 +169,13 @@ public class DatoPelicula {
 
 		return exito;
 	}
+
 	/**
 	 * @author M Carmen
 	 * 
 	 * @date 01/10/2019
 	 * 
-	 *  muestra listado de peliculas recomendadas
+	 *       muestra listado de peliculas recomendadas
 	 */
 	public boolean listarPeliculasRec() {
 
@@ -198,7 +199,6 @@ public class DatoPelicula {
 
 		return exito;
 	}
-	
 
 	/**
 	 * @author Varo
