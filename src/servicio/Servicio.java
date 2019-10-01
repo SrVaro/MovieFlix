@@ -82,5 +82,21 @@ public class Servicio implements IServicio {
 	public void listarPeliculasNoVistas() {
 		// dp.listarPeliculasNoVistas();
 	}
+	
+	public void listarPeliculasRec() {
+		//dp.listarPeliculasRec()
+	}
+	@Override
+	public void listarPeliculaActual() {
+		//dp.listarPeliculaActual();
+	}
+	
+	public void listarCategorias() {
+		//dp.listarCategorias();
+	}
+	
+	public void bajaPelicula() {
+		//dp.bajaPelicula();
+	}
 
 }

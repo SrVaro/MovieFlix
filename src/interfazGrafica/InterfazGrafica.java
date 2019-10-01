@@ -36,10 +36,14 @@ public class InterfazGrafica {
 		System.out.println("5: Listado películas disponibles para el usuario.");
 		System.out.println("6: Litado de todas las películas.");
 		System.out.println("7: Listado de películas por categoria.");
-		System.out.println("8: Listar Usuarios");
-		System.out.println("9: Listado de películas por visualizaciones de mayor a menor");
-		System.out.println("10: Listado de películas de mayor a menor valoración");
-		System.out.println("11: Listado de películas no vistas por el usuario");
+		System.out.println("8: Listar Usuarios.");
+		System.out.println("9: Listado de películas por visualizaciones de mayor a menor.");
+		System.out.println("10: Listado de películas de mayor a menor valoración.");
+		System.out.println("11: Listado de películas no vistas por el usuario.");
+		System.out.println("12: Listado de películas recomendadas.");
+		System.out.println("13: Listado de películas de este año.");
+		System.out.println("14: Listado de las categorias disponibles.");
+		System.out.println("15: Dar de baja peliculas.");
 		System.out.println("0: Para salir.");
 		System.out.println("*-------------------------------------------------------*");
 	}
