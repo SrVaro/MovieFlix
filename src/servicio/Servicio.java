@@ -2,7 +2,6 @@ package servicio;
 
 import datos.DatoPelicula;
 import datos.DatoUsuario;
-import interfazGrafica.InterfazGrafica;
 import modelo.FactoriaPelicula;
 import modelo.FactoriaUsuario;
 import utilidades.LecturaDatos;
@@ -55,33 +54,33 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void listarPeliculas() {
-		// dp.listarPeliculas();
+		dp.listarPeliculas();
 	}
-	
+
 	@Override
 	public void listarPeliculasCat() {
 		// dp.listarPeliculasCat();
 	}
-	
+
 	@Override
 	public void listarUsuarios() {
 		du.listarUsuarios();
 	}
-	
+
+	@Override
 	public void listarPeliculasMayMen() {
-		//dp.listarPeliculasMayMen();
+		dp.listarPeliculasMayMen();
 	}
 
 	@Override
 	public void listarPeliculasVal() {
-		// TODO Auto-generated method stub
-		
+		dp.listarPeliculasVal();
+
 	}
 
 	@Override
 	public void listarPeliculasNoVistas() {
-		// TODO Auto-generated method stub
-		
+		du.listarPeliculasNoVistas(LecturaDatos.LeerInt("Introduce el id del usuario"));
 	}
 
 }

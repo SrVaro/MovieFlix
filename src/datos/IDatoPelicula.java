@@ -18,4 +18,11 @@ public interface IDatoPelicula {
 
 	public boolean listarPeliculasCat(String categoria);
 
+	public boolean listarPeliculas();
+
+	public boolean listarPeliculasMayMen();
+
+	public boolean importarPeliculasTXT();
+
+	public boolean listarPeliculasVal();
 }

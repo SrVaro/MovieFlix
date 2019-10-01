@@ -1,7 +1,5 @@
 package interfazGrafica;
 
-import modelo.Pelicula;
-
 /**
  * 
  * @author Andres
@@ -13,23 +11,8 @@ import modelo.Pelicula;
  */
 public class InterfazGrafica {
 
-	private Pelicula p = new Pelicula();
-
 	public InterfazGrafica() {
 
-	}
-
-	public Pelicula getP() {
-		return p;
-	}
-
-	public void setP(Pelicula p) {
-		this.p = p;
-	}
-
-	@Override
-	public String toString() {
-		return "InterfazGrafica [p=" + p + "]";
 	}
 
 	/**
@@ -55,10 +38,13 @@ public class InterfazGrafica {
 		System.out.println("7: Listado de películas por categoria.");
 		System.out.println("8: Listar Usuarios");
 		System.out.println("9: Listado de películas por visualizaciones de mayor a menor");
+		System.out.println("10: Listado de películas de mayor a menor valoración");
+		System.out.println("11: Listado de películas no vistas por el usuario");
 		System.out.println("0: Para salir.");
 		System.out.println("*-------------------------------------------------------*");
 	}
-	public static void mostrarMenuPausa(){
+
+	public static void mostrarMenuPausa() {
 		System.out.println("\n PUlse cualquier tecla para continuar");
 	}
 
@@ -84,9 +70,11 @@ public class InterfazGrafica {
 		System.out.println("\tPonga 5 para seleccionar categoria ANIMACION");
 		System.out.println("\tPonga 6 para seleccionar categoria THRILLER");
 	}
+
 	public static void mensajeValPelicula() {
 		System.out.println("\nIntroduzca valoración de la película:");
 	}
+
 	/**
 	 * @author M Carmen
 	 * 
@@ -128,18 +116,17 @@ public class InterfazGrafica {
 
 	}
 
+	/**
+	 * @author M Carmen
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 *       mensaje de error BBDD
+	 */
+	public static void mensajeErrorBbdd() {
 
-/**
- * @author M Carmen
- * 
- * @date 01/10/2019
- * 
- *       mensaje de error BBDD
- */
-public static void mensajeErrorBbdd() {
+		System.out.println("\nError BDD:");
 
-	System.out.println("\nError BDD:");
-
-}
+	}
 
 }

@@ -10,14 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JOptionPane;
-
 import bdd.GestorBDD;
 import interfazGrafica.InterfazGrafica;
 
@@ -87,6 +79,14 @@ public class DatoPelicula {
 		return exito;
 	}
 
+	/**
+	 * 
+	 * @author Mª José
+	 * 
+	 * @date 01/10/2019
+	 * 
+	 *       Metodo que muestra películas por su valoración (de mayor a menor)
+	 */
 	public boolean listarPeliculasVal() {
 
 		boolean exito = true;
