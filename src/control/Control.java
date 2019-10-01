@@ -66,6 +66,10 @@ public class Control {
 			break;
 		case 10:
 			s.listarPeliculasVal();
+			break;
+		case 11: 
+			s.listarPeliculasNoVistas();
+			break;
 		}
 		InterfazGrafica.mostrarMenuPausa();
 		LecturaDatos.LeerString();
