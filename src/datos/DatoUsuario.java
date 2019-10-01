@@ -158,8 +158,7 @@ public class DatoUsuario implements IDatoUsuario {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeError();
-
+			InterfazGrafica.mensajeErrorBbdd();
 		}
 
 		return exito;
@@ -188,7 +187,7 @@ public class DatoUsuario implements IDatoUsuario {
 			pstm.executeUpdate();
 
 		} catch (SQLException e) {
-			InterfazGrafica.mensajeError();
+			InterfazGrafica.mensajeErrorBbdd();
 
 		}
 		return exito;
