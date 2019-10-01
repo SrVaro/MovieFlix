@@ -28,6 +28,7 @@ public class GestorBDD {
 	 */
 
 	public static Connection Conectar() {
+
 		Connection link = null;
 		try {
 			Class.forName("org.gjt.mm.mysql.Driver");

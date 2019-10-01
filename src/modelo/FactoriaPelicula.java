@@ -59,4 +59,5 @@ public class FactoriaPelicula {
 		} while (opcion < 1 && opcion > 6);
 		return new Pelicula(nombre, annoEstreno, categoria);
 	}
+
 }

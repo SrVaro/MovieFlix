@@ -2,7 +2,7 @@ package interfazGrafica;
 
 import modelo.Pelicula;
 
-/**
+/** 
  * 
  * @author Andres
  * 
