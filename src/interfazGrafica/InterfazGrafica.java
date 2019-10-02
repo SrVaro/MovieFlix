@@ -148,7 +148,7 @@ public class InterfazGrafica {
 	public static void mensajesLeerPelicula(int n) {
 		switch (n) {
 		case 1:
-			System.out.println(prop.getProperty("pelicula.estreno"));
+			System.out.println(prop.getProperty("pelicula.nombre"));
 			break;
 		case 2:
 			System.out.println(prop.getProperty("pelicula.annoEstreno"));
@@ -164,6 +164,22 @@ public class InterfazGrafica {
 			break;
 		}
 
+	}
+
+	public static void mensajesGestionPeliculaCorrecta(int n) {
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("pelicula.baja"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("pelicula.alta"));
+			break;
+		}
+
+	}
+
+	public static void mensajeErrorCategoria() {
+		System.out.println(prop.getProperty("error.categoria.existe"));
 	}
 
 	public static void mensajeLeerCategoria() {
@@ -208,6 +224,21 @@ public class InterfazGrafica {
 		}
 	}
 
+	public static void mensajesGestionUsuarioCorrecta(int n) {
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("usuario.baja"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("usuario.alta"));
+			break;
+		case 3:
+			System.out.println(prop.getProperty("usuario.actualizar"));
+			break;
+		}
+
+	}
+
 	/**
 	 * @author M Carmen
 	 * 
@@ -238,7 +269,7 @@ public class InterfazGrafica {
 		System.out.println(prop.getProperty("bdd.error"));
 
 	}
-	
+
 	public static void mensajeErrorListarCategoria() {
 
 		System.out.println(prop.getProperty("error.categoria.listar"));

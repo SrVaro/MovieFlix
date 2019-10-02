@@ -48,6 +48,10 @@ public class DatoPelicula {
 
 		}
 
+
+		InterfazGrafica.mensajesGestionPeliculaCorrecta(2);
+		System.out.println(p + "\n");
+
 		return exito;
 	}
 
@@ -70,7 +74,8 @@ public class DatoPelicula {
 			ResultSet x = psql.executeQuery();
 
 			while (x.next()) {
-				System.out.println(x.getString(2));
+				System.out.printf("%-50s%-20s%-20s\n", "PELICULA : " + x.getString(2),
+						"\tAÑO DE ESTRENO: " + x.getString(3), "\tCATEGORIA: " + x.getString(4).toUpperCase() + "\n");
 			}
 
 		} catch (SQLException e) {
@@ -99,7 +104,8 @@ public class DatoPelicula {
 		try (Connection con = GestorBDD.Conectar(); PreparedStatement psql = con.prepareStatement(SSQL);) {
 			ResultSet x = psql.executeQuery();
 			while (x.next()) {
-				System.out.println(x.getString(2));
+				System.out.printf("%-50s%-20s\n", "PELICULA : " + x.getString(2),
+						"\tVALORACION: " + x.getInt(6) + "\n");
 			}
 		} catch (SQLException e) {
 			InterfazGrafica.mensajeErrorPelicula(3);
@@ -114,7 +120,7 @@ public class DatoPelicula {
 	 * 
 	 * @date 01/10/2019
 	 * 
-	 *       metodo listar pelicula por categoria
+	 *       Metodo listar pelicula por categoria
 	 */
 
 	public boolean listarPeliculasCat(String categoria) {
@@ -122,18 +128,29 @@ public class DatoPelicula {
 
 		String SQL = "SELECT * FROM pelicula WHERE categoria = ?";
 
-		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
+		boolean categoriaExiste = false;
 
-			p.setString(1, categoria);
+		for (int i = 0; i < CATEGORIA.values().length; i++) {
+			if (CATEGORIA.values()[i].toString().equalsIgnoreCase(categoria))
+				categoriaExiste = true;
+		}
 
-			try (ResultSet rs = p.executeQuery();) {
-				while (rs.next()) {
-					System.out.println(rs.getString(2));
+		if (categoriaExiste) {
+			try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
+
+				p.setString(1, categoria);
+
+				try (ResultSet rs = p.executeQuery();) {
+					while (rs.next()) {
+						System.out.println(rs.getString(2));
+					}
 				}
+			} catch (SQLException e) {
+				exito = false;
+				InterfazGrafica.mensajeErrorPelicula(3);
 			}
-		} catch (SQLException e) {
-			exito = false;
-			InterfazGrafica.mensajeErrorPelicula(3);
+		}else {
+			InterfazGrafica.mensajeErrorCategoria();
 		}
 
 		return exito;
@@ -145,7 +162,7 @@ public class DatoPelicula {
 	 * 
 	 * @date 01/10/2019
 	 * 
-	 *       metodo listar pelicula por categoria
+	 *       Metodo listar pelicula segun visualizaciones
 	 */
 	public boolean listarPeliculasMayMen() {
 
@@ -158,7 +175,8 @@ public class DatoPelicula {
 			ResultSet x = psql.executeQuery();
 
 			while (x.next()) {
-				System.out.println(x.getString(2));
+				System.out.printf("%-50s%-20s\n", "PELICULA : " + x.getString(2),
+						"\tVISUALIZACIONES: " + x.getInt(5) + "\n");
 			}
 
 		} catch (SQLException e) {
@@ -175,7 +193,7 @@ public class DatoPelicula {
 	 * 
 	 * @date 01/10/2019
 	 * 
-	 *       muestra listado de peliculas recomendadas
+	 *       Muestra listado de peliculas recomendadas
 	 */
 	public boolean listarPeliculasRec() {
 
@@ -261,7 +279,7 @@ public class DatoPelicula {
 	 * 
 	 * @date 01/10/2019
 	 * 
-	 *       metodo listar pelicula por categoria
+	 *       Metodo listar pelicula por actual
 	 */
 
 	public boolean listarPeliculaActual() {
@@ -327,7 +345,7 @@ public class DatoPelicula {
 	 * 
 	 * @date 01/10/19
 	 * 
-	 *       metodo para listar categorias
+	 *       metodo para dar de baja una pelicula
 	 */
 
 	public boolean bajaPelicula(int id) {
@@ -344,6 +362,9 @@ public class DatoPelicula {
 			InterfazGrafica.mensajeErrorPelicula(2);
 			exito = false;
 		}
+
+		InterfazGrafica.mensajesGestionPeliculaCorrecta(1);
+
 		return exito;
 	}
 

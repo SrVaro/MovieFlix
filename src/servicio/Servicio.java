@@ -107,7 +107,7 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void bajaPelicula() {
-		InterfazGrafica.mensajesLeerUsuario(4);
+		InterfazGrafica.mensajesLeerPelicula(4);
 		dp.bajaPelicula(LecturaDatos.LeerInt());
 	}
 

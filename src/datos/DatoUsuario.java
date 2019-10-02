@@ -48,6 +48,9 @@ public class DatoUsuario implements IDatoUsuario {
 			InterfazGrafica.mensajeErrorUsuario(2);
 			exito = false;
 		}
+		
+		InterfazGrafica.mensajesGestionUsuarioCorrecta(1);
+		
 		return exito;
 	}
 
@@ -69,7 +72,7 @@ public class DatoUsuario implements IDatoUsuario {
 				ResultSet rs = p.executeQuery()) {
 
 			while (rs.next()) {
-				System.out.println(rs.getString(2));
+				System.out.printf("%-10s%-20s%-20s\n","ID: " + rs.getInt(1) , "NOMBRE: " + rs.getString(2) , "APELLIDO: " + rs.getString(3));
 			}
 
 		} catch (SQLException e) {
@@ -91,7 +94,7 @@ public class DatoUsuario implements IDatoUsuario {
 	public boolean peliculasUsuario(int ID) {
 		boolean exito = true;
 
-		String SQL = "SELECT P.nombre FROM pelicula P \r\n" + "WHERE P.categoria \r\n" + "IN (SELECT UC.categoria\r\n"
+		String SQL = "SELECT * FROM pelicula P \r\n" + "WHERE P.categoria \r\n" + "IN (SELECT UC.categoria\r\n"
 				+ "     FROM usuariocategoria UC\r\n" + "     WHERE UC.idUsuario = ? );";
 
 		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
@@ -100,7 +103,8 @@ public class DatoUsuario implements IDatoUsuario {
 
 			try (ResultSet rs = p.executeQuery();) {
 				while (rs.next()) {
-					System.out.println((rs.getString(1)));
+					System.out.printf("%-50s%-20s%-20s\n" , "PELICULA : " + rs.getString(2) , "\tAÑO DE ESTRENO: " + rs.getString(3) , "\tCATEGORIA: " + rs.getString(4).toUpperCase() + "\n");
+
 				}
 			}
 		} catch (SQLException e) {
@@ -140,6 +144,9 @@ public class DatoUsuario implements IDatoUsuario {
 
 			InterfazGrafica.mensajeErrorUsuario(1);
 		}
+		
+		InterfazGrafica.mensajesGestionUsuarioCorrecta(2);
+		System.out.println(u + "\n");
 
 		return exito;
 	}
@@ -170,6 +177,9 @@ public class DatoUsuario implements IDatoUsuario {
 			InterfazGrafica.mensajeErrorUsuario(4);
 
 		}
+		
+		InterfazGrafica.mensajesGestionUsuarioCorrecta(3);
+		System.out.println(u + "\n");
 		return exito;
 	}
 
@@ -177,7 +187,7 @@ public class DatoUsuario implements IDatoUsuario {
 	public boolean listarPeliculasNoVistas(int id) {
 		boolean exito = true;
 
-		String SQL = "SELECT P.nombre FROM pelicula P \r\n" + "WHERE P.idPelicula \r\n"
+		String SQL = "SELECT * FROM pelicula P \r\n" + "WHERE P.idPelicula \r\n"
 				+ "NOT IN (SELECT R.idPelicula\r\n" + "     FROM registro R\r\n" + "     WHERE R.idUsuario = ? );";
 
 		try (Connection con = GestorBDD.Conectar(); PreparedStatement p = con.prepareStatement(SQL)) {
@@ -186,7 +196,8 @@ public class DatoUsuario implements IDatoUsuario {
 
 			try (ResultSet rs = p.executeQuery();) {
 				while (rs.next()) {
-					System.out.println(rs.getString(1));
+					System.out.printf("%-50s%-20s%-20s\n" , "PELICULA : " + rs.getString(2) , "\tAÑO DE ESTRENO: " + rs.getString(3) , "\tCATEGORIA: " + rs.getString(4).toUpperCase() + "\n");
+
 				}
 			}
 		} catch (SQLException e) {
