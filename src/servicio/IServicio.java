@@ -39,4 +39,10 @@ public interface IServicio {
 	public void listarCategorias();
 
 	public void bajaPelicula();
+	
+	public void gestionUsuarios();
+	
+	public void gestionPeliculas();
+	
+	public void listadosPeliculas();
 }
