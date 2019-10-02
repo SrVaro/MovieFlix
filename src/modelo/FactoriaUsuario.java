@@ -29,7 +29,7 @@ public class FactoriaUsuario {
 	 */
 
 	public static Usuario pedirUsuario() {
-		System.out.println("Añadir un usuario");
+		InterfazGrafica.mensajesLeerUsuario(7);
 
 		InterfazGrafica.mensajesLeerUsuario(1);
 		String nombre = LecturaDatos.LeerString();

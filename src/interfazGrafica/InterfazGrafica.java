@@ -67,8 +67,9 @@ public class InterfazGrafica {
 		System.out.println("******************************************************");
 		System.out.println(" ");
 	}
-	public static void gestionU(){
-	
+
+	public static void gestionU() {
+
 		System.out.println("Elija una de las siguientes opciones:");
 		System.out.println(" ");
 		System.out.println("******************************************************");
@@ -86,9 +87,9 @@ public class InterfazGrafica {
 		System.out.println("******************************************************");
 		System.out.println(" ");
 	}
-	
+
 	public static void gestionP() {
-		
+
 		System.out.println("Elija una de las siguientes opciones:");
 		System.out.println(" ");
 		System.out.println("******************************************************");
@@ -106,7 +107,7 @@ public class InterfazGrafica {
 	}
 
 	public static void listPeliculas() {
-		
+
 		System.out.println("Elija una de las siguientes opciones:");
 		System.out.println(" ");
 		System.out.println("******************************************************");
@@ -158,10 +159,13 @@ public class InterfazGrafica {
 		case 4:
 			System.out.println(prop.getProperty("pelicula.id"));
 			break;
+		case 5:
+			System.out.println(prop.getProperty("pelicula.crear"));
+			break;
 		}
 
 	}
-	
+
 	public static void mensajeLeerCategoria() {
 		System.out.println(prop.getProperty("categoria.categoria"));
 	}
@@ -198,10 +202,11 @@ public class InterfazGrafica {
 		case 6:
 			System.out.println(prop.getProperty("usuario.id"));
 			break;
+		case 7:
+			System.out.println(prop.getProperty("usuario.crear"));
+			break;
 		}
 	}
-	
-	
 
 	/**
 	 * @author M Carmen
@@ -234,6 +239,12 @@ public class InterfazGrafica {
 
 	}
 	
+	public static void mensajeErrorListarCategoria() {
+
+		System.out.println(prop.getProperty("error.categoria.listar"));
+
+	}
+
 	public static void mensajeErrorUsuario(int n) {
 
 		switch (n) {
@@ -252,7 +263,7 @@ public class InterfazGrafica {
 		}
 
 	}
-	
+
 	public static void mensajeErrorPelicula(int n) {
 
 		switch (n) {

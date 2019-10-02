@@ -23,7 +23,7 @@ import interfazGrafica.InterfazGrafica;
 public class FactoriaPelicula {
 
 	public static Pelicula pedirPelicula() {
-		System.out.println("Adjuntar nueva película");
+		InterfazGrafica.mensajesLeerPelicula(5);
 
 		InterfazGrafica.mensajesLeerPelicula(1);
 		String nombre = LecturaDatos.LeerString();

@@ -28,135 +28,138 @@ public class Control {
 	 *         usuario
 	 */
 	public static void empezarPrograma() {
-		
+
 		InterfazGrafica.inicializarInterfaz();
 
 		int opcion = 99;
 		while (opcion != 0) {
 
 			InterfazGrafica.mostrarMenu();
-			
+
 			do {
-								
-			opcion = LecturaDatos.LeerInt();
-			if (opcion<0||opcion>5) {
-				//mensaje 
-			}}while(opcion<0||opcion>5);
+
+				opcion = LecturaDatos.LeerInt();
+				if (opcion < 0 || opcion > 5)
+					InterfazGrafica.mensajeErrorOpcion();
+
+			} while (opcion < 0 || opcion > 5);
 
 			switch (opcion) {
-			
+
 			case 1:
-					s.gestionUsuarios();
-					break;
+				s.gestionUsuarios();
+				break;
 			case 2:
-					s.gestionPeliculas();
-					break;
+				s.gestionPeliculas();
+				break;
 			case 3:
-					s.listarUsuarios();
-					break;
-			case 4: 
-					s.listarCategorias();
-					break;
-			case 5: 
-					s.listadosPeliculas();
-					break;
-				}
+				s.listarUsuarios();
+				break;
+			case 4:
+				s.listarCategorias();
+				break;
+			case 5:
+				s.listadosPeliculas();
+				break;
 			}
-			
-			InterfazGrafica.mostrarMenuPausa();
-			LecturaDatos.LeerString();
-				
 		}
-	
+
+		InterfazGrafica.mostrarMenuPausa();
+		LecturaDatos.LeerString();
+
+	}
+
 	public void gestionUsuarios() {
 		int option = 99;
 		while (option != 0) {
-			
+
 			InterfazGrafica.gestionU();
-			
+
 			do {
-							
-			option = LecturaDatos.LeerInt();
-			if (option<0||option>3) {
-				//mensaje 
-			}}while(option<0||option>3);
-			
+
+				option = LecturaDatos.LeerInt();
+				if (option < 0 || option > 3)
+					InterfazGrafica.mensajeErrorOpcion();
+			} while (option < 0 || option > 3);
+
 			switch (option) {
-			case 1: 
-					s.altaUsuario();
-					break;
+			case 1:
+				s.altaUsuario();
+				break;
 			case 2:
-					s.bajaUsuario();
-					break;
+				s.bajaUsuario();
+				break;
 			case 3:
-					s.actualizarUsuario();
-					break;
+				s.actualizarUsuario();
+				break;
 			}
 		}
 	}
-	
+
 	public void gestionPeliculas() {
 		int opcion = 99;
-		while (opcion !=0) {
-			
+		while (opcion != 0) {
+
 			InterfazGrafica.gestionP();
-			
+
 			do {
-			
-			opcion = LecturaDatos.LeerInt();
-			if (opcion<0||opcion>2) {
-				//mensaje
-			}}while(opcion<0||opcion>2);
-			
+
+				opcion = LecturaDatos.LeerInt();
+				if (opcion < 0 || opcion > 2)
+					InterfazGrafica.mensajeErrorOpcion();
+
+			} while (opcion < 0 || opcion > 2);
+
 			switch (opcion) {
 			case 1:
-					s.altaPelicula();
-					break;
+				s.altaPelicula();
+				break;
 			case 2:
-					s.bajaPelicula();
-					break;
+				s.bajaPelicula();
+				break;
 			}
 		}
 	}
-	
+
 	public void listadosPeliculas() {
 		int opcion = 99;
-		while (opcion !=0) {
-			
+		while (opcion != 0) {
+
 			InterfazGrafica.listPeliculas();
-			
+
 			do {
-			
-			opcion = LecturaDatos.LeerInt();
-			if (opcion<0||opcion>8) {
-				//mensaje
-			}}while(opcion<0||opcion>8);
-			
+
+				opcion = LecturaDatos.LeerInt();
+				if (opcion < 0 || opcion > 8)
+					InterfazGrafica.mensajeErrorOpcion();
+
+			} while (opcion < 0 || opcion > 8);
+
 			switch (opcion) {
 			case 1:
-					s.peliculaUsuario();
-					break;
+				s.peliculaUsuario();
+				break;
 			case 2:
-					s.listadosPeliculas();
-					break;
-			case 3: 
-					s.listarPeliculasMayMen();
-					break;
+				s.listarPeliculas();
+				break;
+			case 3:
+				s.listarPeliculasMayMen();
+				break;
 			case 4:
-					s.listarPeliculasVal();
-					break;
+				s.listarPeliculasVal();
+				break;
 			case 5:
-					s.listarPeliculasNoVistas();
-					break;
-			case 6: 
-					s.listarPeliculasRec();
-					break;
-			case 7: 
-					s.listarPeliculaActual();
-					break;
+				s.listarPeliculasNoVistas();
+				break;
+			case 6:
+				s.listarPeliculasRec();
+				break;
+			case 7:
+				s.listarPeliculaActual();
+				break;
 			case 8:
-					s.listarPeliculasCat();
-					break;
+				s.listarPeliculasCat();
+				break;
 			}
 		}
 	}

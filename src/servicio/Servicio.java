@@ -3,6 +3,7 @@ package servicio;
 import control.Control;
 import datos.DatoPelicula;
 import datos.DatoUsuario;
+import interfazGrafica.InterfazGrafica;
 import modelo.FactoriaPelicula;
 import modelo.FactoriaUsuario;
 import utilidades.LecturaDatos;
@@ -33,7 +34,8 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void bajaUsuario() {
-		du.bajaUsuario(LecturaDatos.LeerInt("Introduce el id del usuario"));
+		InterfazGrafica.mensajesLeerUsuario(6);
+		du.bajaUsuario(LecturaDatos.LeerInt());
 	}
 
 	@Override
@@ -43,14 +45,15 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void actualizarUsuario() {
-		du.actualizarUsuario(FactoriaUsuario.pedirUsuario(),
-				LecturaDatos.LeerInt("Introduce el id del usuario que quieres actualizar"));
+		InterfazGrafica.mensajesLeerUsuario(6);
+		du.actualizarUsuario(LecturaDatos.LeerInt(), FactoriaUsuario.pedirUsuario());
 
 	}
 
 	@Override
 	public void peliculaUsuario() {
-		du.peliculasUsuario(LecturaDatos.LeerInt("Introduce el id del usuario"));
+		InterfazGrafica.mensajesLeerUsuario(6);
+		du.peliculasUsuario(LecturaDatos.LeerInt());
 
 	}
 
@@ -61,7 +64,8 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void listarPeliculasCat() {
-		dp.listarPeliculasCat(LecturaDatos.LeerString("Introduce una categoria"));
+		InterfazGrafica.mensajeLeerCategoria();
+		dp.listarPeliculasCat(LecturaDatos.LeerString());
 	}
 
 	@Override
@@ -82,7 +86,8 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void listarPeliculasNoVistas() {
-		du.listarPeliculasNoVistas(LecturaDatos.LeerInt("Introduce el id del usuario"));
+		InterfazGrafica.mensajesLeerUsuario(6);
+		du.listarPeliculasNoVistas(LecturaDatos.LeerInt());
 	}
 
 	@Override
@@ -102,17 +107,18 @@ public class Servicio implements IServicio {
 
 	@Override
 	public void bajaPelicula() {
-		dp.bajaPelicula(LecturaDatos.LeerInt("Introduce el id de la pelicula"));
+		InterfazGrafica.mensajesLeerUsuario(4);
+		dp.bajaPelicula(LecturaDatos.LeerInt());
 	}
-	
+
 	public void gestionUsuarios() {
 		c.gestionUsuarios();
 	}
-	
+
 	public void gestionPeliculas() {
 		c.gestionPeliculas();
 	}
-	
+
 	public void listadosPeliculas() {
 		c.listadosPeliculas();
 	}
