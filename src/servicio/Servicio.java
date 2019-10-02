@@ -1,5 +1,6 @@
 package servicio;
 
+import control.Control;
 import datos.DatoPelicula;
 import datos.DatoUsuario;
 import modelo.FactoriaPelicula;
@@ -18,6 +19,7 @@ public class Servicio implements IServicio {
 
 	DatoUsuario du = new DatoUsuario();
 	DatoPelicula dp = new DatoPelicula();
+	Control c = new Control();
 
 	public Servicio() {
 
@@ -101,6 +103,18 @@ public class Servicio implements IServicio {
 	@Override
 	public void bajaPelicula() {
 		dp.bajaPelicula(LecturaDatos.LeerInt("Introduce el id de la pelicula"));
+	}
+	
+	public void gestionUsuarios() {
+		c.gestionUsuarios();
+	}
+	
+	public void gestionPeliculas() {
+		c.gestionPeliculas();
+	}
+	
+	public void listadosPeliculas() {
+		c.listadosPeliculas();
 	}
 
 }
