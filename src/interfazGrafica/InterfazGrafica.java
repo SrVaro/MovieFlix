@@ -68,13 +68,13 @@ public class InterfazGrafica {
 	}
 
 	public static void mostrarMenuPausa() {
-		System.out.println("\n PUlse cualquier tecla para continuar");
+		System.out.println(prop.getProperty("menu.pausa"));
 	}
 
 	/**
 	 * @author M Carmen
 	 * 
-	 *         mensajes para dar de alta una pelicula
+	 *         Mensajes para dar de alta una pelicula
 	 */
 	public static void mensajesLeerPelicula(int n) {
 		switch (n) {
@@ -87,12 +87,19 @@ public class InterfazGrafica {
 		case 3:
 			System.out.println(prop.getProperty("pelicula.valoracion"));
 			break;
+		case 4:
+			System.out.println(prop.getProperty("pelicula.id"));
+			break;
 		}
 
 	}
-
+	
 	public static void mensajeLeerCategoria() {
 		System.out.println(prop.getProperty("categoria.categoria"));
+	}
+
+	public static void mensajeMenuCategoria() {
+		System.out.println(prop.getProperty("categoria.menu"));
 	}
 
 	/**
@@ -120,32 +127,80 @@ public class InterfazGrafica {
 		case 5:
 			System.out.println(prop.getProperty("usuario.ciudad"));
 			break;
+		case 6:
+			System.out.println(prop.getProperty("usuario.id"));
+			break;
 		}
 	}
+	
+	
 
 	/**
 	 * @author M Carmen
 	 * 
 	 * @date 30/09/2019
 	 * 
-	 *       mensaje de error
+	 *       Mensajes de error
 	 */
-	public static void mensajeError() {
+	public static void mensajeErrorLeerInt() {
 
-		System.out.println("\nError al introducir los datos, vuelva a intentarlo:");
+		System.out.println(prop.getProperty("lectura.error.int"));
 
 	}
 
-	/**
-	 * @author M Carmen
-	 * 
-	 * @date 01/10/2019
-	 * 
-	 *       mensaje de error BBDD
-	 */
+	public static void mensajeErrorLeerDate() {
+
+		System.out.println(prop.getProperty("lectura.error.date"));
+
+	}
+
+	public static void mensajeErrorOpcion() {
+
+		System.out.println(prop.getProperty("opcion.error"));
+
+	}
+
 	public static void mensajeErrorBbdd() {
 
-		System.out.println("\nError BDD:");
+		System.out.println(prop.getProperty("bdd.error"));
+
+	}
+	
+	public static void mensajeErrorUsuario(int n) {
+
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("error.usuario.alta"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("error.usuario.baja"));
+			break;
+		case 3:
+			System.out.println(prop.getProperty("error.usuario.listar"));
+			break;
+		case 4:
+			System.out.println(prop.getProperty("error.usuario.actualizar"));
+			break;
+		}
+
+	}
+	
+	public static void mensajeErrorPelicula(int n) {
+
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("error.pelicula.alta"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("error.pelicula.baja"));
+			break;
+		case 3:
+			System.out.println(prop.getProperty("error.pelicula.listar"));
+			break;
+		case 4:
+			System.out.println(prop.getProperty("error.pelicula.importar"));
+			break;
+		}
 
 	}
 
