@@ -45,7 +45,7 @@ public class DatoUsuario implements IDatoUsuario {
 			p.executeUpdate();
 
 		} catch (SQLException e) {
-			System.out.println(e);
+			InterfazGrafica.mensajeErrorUsuario(2);
 			exito = false;
 		}
 		return exito;
@@ -74,7 +74,7 @@ public class DatoUsuario implements IDatoUsuario {
 
 		} catch (SQLException e) {
 			exito = false;
-			e.printStackTrace();
+			InterfazGrafica.mensajeErrorUsuario(3);
 		}
 
 		return exito;
@@ -105,7 +105,7 @@ public class DatoUsuario implements IDatoUsuario {
 			}
 		} catch (SQLException e) {
 			exito = false;
-			e.printStackTrace();
+			InterfazGrafica.mensajeErrorPelicula(3);
 		}
 		return exito;
 	}
@@ -138,7 +138,7 @@ public class DatoUsuario implements IDatoUsuario {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeErrorBbdd();
+			InterfazGrafica.mensajeErrorUsuario(1);
 		}
 
 		return exito;
@@ -153,7 +153,7 @@ public class DatoUsuario implements IDatoUsuario {
 	 *       Metodo actualizar un usuario
 	 */
 	@Override
-	public boolean actualizarUsuario(Usuario u, int id) {
+	public boolean actualizarUsuario(int id, Usuario u) {
 		boolean exito = true;
 
 		String sSQL = "UPDATE usuario SET nombre=?, apellido1=?, apellido2=?, fechaNacimiento=?, ciudad=? WHERE idUsuario=?";
@@ -167,7 +167,7 @@ public class DatoUsuario implements IDatoUsuario {
 			pstm.executeUpdate();
 
 		} catch (SQLException e) {
-			InterfazGrafica.mensajeErrorBbdd();
+			InterfazGrafica.mensajeErrorUsuario(4);
 
 		}
 		return exito;
@@ -191,7 +191,7 @@ public class DatoUsuario implements IDatoUsuario {
 			}
 		} catch (SQLException e) {
 			exito = false;
-			e.printStackTrace();
+			InterfazGrafica.mensajeErrorPelicula(3);
 		}
 
 		return exito;

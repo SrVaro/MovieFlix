@@ -19,7 +19,7 @@ public interface IDatoUsuario {
 
 	public boolean altaUsuario(Usuario u);
 
-	public boolean actualizarUsuario(Usuario u, int id);
+	public boolean actualizarUsuario(int id, Usuario u);
 
 	public boolean listarUsuarios();
 

@@ -47,24 +47,93 @@ public class InterfazGrafica {
 	public static void mostrarMenu() {
 
 		System.out.println("Elija una de las siguientes opciones:");
-		System.out.println("*-------------------------------------------------------*");
-		System.out.println("1: Dar de alta películas.");
-		System.out.println("2: Dar de alta usuarios.");
-		System.out.println("3: Dar de baja usuarios.");
-		System.out.println("4: Modificar usuarios.");
-		System.out.println("5: Listado películas disponibles para el usuario.");
-		System.out.println("6: Litado de todas las películas.");
-		System.out.println("7: Listado de películas por categoria.");
-		System.out.println("8: Listar Usuarios.");
-		System.out.println("9: Listado de películas por visualizaciones de mayor a menor.");
-		System.out.println("10: Listado de películas de mayor a menor valoración.");
-		System.out.println("11: Listado de películas no vistas por el usuario.");
-		System.out.println("12: Listado de películas recomendadas.");
-		System.out.println("13: Listado de películas de este año.");
-		System.out.println("14: Listado de las categorias disponibles.");
-		System.out.println("15: Dar de baja peliculas.");
-		System.out.println("0: Para salir.");
-		System.out.println("*-------------------------------------------------------*");
+		System.out.println(" ");
+		System.out.println("******************************************************");
+		System.out.println("******************************************************");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             1. GESTIÓN DE USUARIOS               **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             2. GESTIÓN DE PELÍCULAS              **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             3. LISTADO DE USUARIOS               **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             4. LISTADO DE CATEGORÍAS             **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             5. LISTADOS PELÍCULAS                **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             0. SALIR                             **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("******************************************************");
+		System.out.println("******************************************************");
+		System.out.println(" ");
+	}
+
+	public static void gestionU() {
+
+		System.out.println("Elija una de las siguientes opciones:");
+		System.out.println(" ");
+		System.out.println("******************************************************");
+		System.out.println("******************************************************");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             1. Dar de alta Usuario               **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             2. Dar de baja Usuario               **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             3. Modificar Usuario                 **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             0. SALIR                             **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("******************************************************");
+		System.out.println("******************************************************");
+		System.out.println(" ");
+	}
+
+	public static void gestionP() {
+
+		System.out.println("Elija una de las siguientes opciones:");
+		System.out.println(" ");
+		System.out.println("******************************************************");
+		System.out.println("******************************************************");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             1. Dar de alta Película              **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             2. Dar de baja Película              **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**             0. SALIR                             **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("******************************************************");
+		System.out.println("******************************************************");
+		System.out.println(" ");
+	}
+
+	public static void listPeliculas() {
+
+		System.out.println("Elija una de las siguientes opciones:");
+		System.out.println(" ");
+		System.out.println("******************************************************");
+		System.out.println("******************************************************");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**    1. Disponibles para el Usuario                **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**    2. Todas las Películas                        **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**    3. Por visualizaciones (de Mayor a Menor)     **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**    4. Por valoración (de Mayor a Menor)          **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**    5. No vistas por el Usuario                   **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**    6. Recomendadas                               **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**    7. Películas de este año                      **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**    8. Por categorías                             **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("**    0. SALIR                                      **");
+		System.out.println("**--------------------------------------------------**");
+		System.out.println("******************************************************");
+		System.out.println("******************************************************");
+		System.out.println(" ");
 	}
 
 	public static void mostrarMenuPausa() {
@@ -90,10 +159,13 @@ public class InterfazGrafica {
 		case 4:
 			System.out.println(prop.getProperty("pelicula.id"));
 			break;
+		case 5:
+			System.out.println(prop.getProperty("pelicula.crear"));
+			break;
 		}
 
 	}
-	
+
 	public static void mensajeLeerCategoria() {
 		System.out.println(prop.getProperty("categoria.categoria"));
 	}
@@ -130,10 +202,11 @@ public class InterfazGrafica {
 		case 6:
 			System.out.println(prop.getProperty("usuario.id"));
 			break;
+		case 7:
+			System.out.println(prop.getProperty("usuario.crear"));
+			break;
 		}
 	}
-	
-	
 
 	/**
 	 * @author M Carmen
@@ -166,6 +239,12 @@ public class InterfazGrafica {
 
 	}
 	
+	public static void mensajeErrorListarCategoria() {
+
+		System.out.println(prop.getProperty("error.categoria.listar"));
+
+	}
+
 	public static void mensajeErrorUsuario(int n) {
 
 		switch (n) {
@@ -184,7 +263,7 @@ public class InterfazGrafica {
 		}
 
 	}
-	
+
 	public static void mensajeErrorPelicula(int n) {
 
 		switch (n) {

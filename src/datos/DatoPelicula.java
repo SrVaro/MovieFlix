@@ -44,7 +44,7 @@ public class DatoPelicula {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeErrorBbdd();
+			InterfazGrafica.mensajeErrorPelicula(1);
 
 		}
 
@@ -75,7 +75,7 @@ public class DatoPelicula {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeErrorBbdd();
+			InterfazGrafica.mensajeErrorPelicula(3);
 			exito = false;
 		}
 
@@ -102,7 +102,7 @@ public class DatoPelicula {
 				System.out.println(x.getString(2));
 			}
 		} catch (SQLException e) {
-			InterfazGrafica.mensajeErrorBbdd();
+			InterfazGrafica.mensajeErrorPelicula(3);
 			exito = false;
 		}
 		return exito;
@@ -133,7 +133,7 @@ public class DatoPelicula {
 			}
 		} catch (SQLException e) {
 			exito = false;
-			e.printStackTrace();
+			InterfazGrafica.mensajeErrorPelicula(3);
 		}
 
 		return exito;
@@ -163,7 +163,7 @@ public class DatoPelicula {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeErrorBbdd();
+			InterfazGrafica.mensajeErrorPelicula(3);
 			exito = false;
 		}
 
@@ -193,7 +193,7 @@ public class DatoPelicula {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeErrorBbdd();
+			InterfazGrafica.mensajeErrorPelicula(3);
 			exito = false;
 		}
 
@@ -249,7 +249,7 @@ public class DatoPelicula {
 
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			InterfazGrafica.mensajeErrorPelicula(4);
 		}
 
 		return true;
@@ -282,7 +282,7 @@ public class DatoPelicula {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeErrorBbdd();
+			InterfazGrafica.mensajeErrorPelicula(3);
 			exito = false;
 		}
 
@@ -314,7 +314,7 @@ public class DatoPelicula {
 
 		} catch (SQLException e) {
 
-			InterfazGrafica.mensajeErrorBbdd();
+			InterfazGrafica.mensajeErrorListarCategoria();
 			exito = false;
 		}
 
@@ -341,7 +341,7 @@ public class DatoPelicula {
 			p.executeUpdate();
 
 		} catch (SQLException e) {
-			System.out.println(e);
+			InterfazGrafica.mensajeErrorPelicula(2);
 			exito = false;
 		}
 		return exito;
