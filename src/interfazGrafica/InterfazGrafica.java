@@ -1,5 +1,10 @@
 package interfazGrafica;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 /**
  * 
  * @author Andres
@@ -11,8 +16,22 @@ package interfazGrafica;
  */
 public class InterfazGrafica {
 
+	private static Properties prop = new Properties();
+	private static InputStream is = null;
+
 	public InterfazGrafica() {
 
+	}
+
+	public static void inicializarInterfaz() {
+		InputStream is = null;
+
+		try {
+			is = new FileInputStream("src/mensajes.properties");
+			prop.load(is);
+		} catch (IOException e) {
+			System.out.println(e.toString());
+		}
 	}
 
 	/**
@@ -57,26 +76,23 @@ public class InterfazGrafica {
 	 * 
 	 *         mensajes para dar de alta una pelicula
 	 */
-	public static void mensajeNombrePelicula() {
-		System.out.println("\nIntroduzca el nombre de la película:");
+	public static void mensajesLeerPelicula(int n) {
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("pelicula.estreno"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("pelicula.annoEstreno"));
+			break;
+		case 3:
+			System.out.println(prop.getProperty("pelicula.valoracion"));
+			break;
+		}
+
 	}
 
-	public static void mensajeAnnoPelicula() {
-		System.out.println("\n Introduzca el año del estreno:");
-	}
-
-	public static void mensajeCategoriaPelicula() {
-		System.out.println("\nIntroduzca a que categoria pertenece:");
-		System.out.println("\tPonga 1 para seleccionar categoria POLICIACA");
-		System.out.println("\tPonga 2 para seleccionar categoria ROMANTICA");
-		System.out.println("\tPonga 3 para seleccionar categoria AVENTURAS");
-		System.out.println("\tPonga 4 para seleccionar categoria COMEDIA");
-		System.out.println("\tPonga 5 para seleccionar categoria ANIMACION");
-		System.out.println("\tPonga 6 para seleccionar categoria THRILLER");
-	}
-
-	public static void mensajeValPelicula() {
-		System.out.println("\nIntroduzca valoración de la película:");
+	public static void mensajeLeerCategoria() {
+		System.out.println(prop.getProperty("categoria.categoria"));
 	}
 
 	/**
@@ -87,24 +103,24 @@ public class InterfazGrafica {
 	 *       Mensajes para dar de alta un usuario
 	 */
 
-	public static void mensajeNombreUsuario() {
-		System.out.println("\nIntroduzca el nombre de usuario:");
-	}
-
-	public static void mensajeApellido1Usuario() {
-		System.out.println("\nIntroduzca primer apellido:");
-	}
-
-	public static void mensajeApellido2Usuario() {
-		System.out.println("\nIntroduzca segundo apellido");
-	}
-
-	public static void mensajeFechaNacimientoUsuario() {
-		System.out.println("\n Introduzca la fecha de nacimiento (yyyy-MM-dd):");
-	}
-
-	public static void mensajeCiudadUsuario() {
-		System.out.println("\n Introduzca ciudad del usuario:");
+	public static void mensajesLeerUsuario(int n) {
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("usuario.nombre"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("usuario.apellido1"));
+			break;
+		case 3:
+			System.out.println(prop.getProperty("usuario.apellido2"));
+			break;
+		case 4:
+			System.out.println(prop.getProperty("usuario.fechaNacimiento"));
+			break;
+		case 5:
+			System.out.println(prop.getProperty("usuario.ciudad"));
+			break;
+		}
 	}
 
 	/**

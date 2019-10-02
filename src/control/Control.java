@@ -28,6 +28,8 @@ public class Control {
 	 *         usuario
 	 */
 	public static void empezarPrograma() {
+		
+		InterfazGrafica.inicializarInterfaz();
 
 		int opcion = 99;
 		while (opcion != 0) {

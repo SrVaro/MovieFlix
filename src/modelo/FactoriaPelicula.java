@@ -21,21 +21,21 @@ public class FactoriaPelicula {
 	public static Pelicula pedirPelicula() {
 		System.out.println("Adjuntar nueva película");
 
-		InterfazGrafica.mensajeNombrePelicula();
+		InterfazGrafica.mensajesLeerPelicula(1);
 		String nombre = LecturaDatos.LeerString();
 
-		InterfazGrafica.mensajeAnnoPelicula();
+		InterfazGrafica.mensajesLeerPelicula(2);
 		int annoEstreno = (LecturaDatos.LeerInt());
 
 		CATEGORIA categoria = null;
-		InterfazGrafica.mensajeValPelicula();
+		InterfazGrafica.mensajesLeerPelicula(3);
 		int valoracion = LecturaDatos.LeerInt();
 
 		int opcion = 0;
 
 		do {
 
-			InterfazGrafica.mensajeCategoriaPelicula();
+			InterfazGrafica.mensajeLeerCategoria();
 			opcion = LecturaDatos.LeerInt();
 
 			switch (opcion) {
