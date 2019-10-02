@@ -4,7 +4,6 @@ import java.sql.Date;
 
 public class Usuario {
 
-	private int id;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
@@ -20,14 +19,6 @@ public class Usuario {
 		this.apellido2 = apellido2;
 		this.fechaNacimiento = fechaNacimiento;
 		this.ciudadNacimiento = ciudadNacimiento;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getNombre() {
@@ -72,7 +63,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
+		return "Usuario [nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
 				+ ", fechaNacimiento=" + fechaNacimiento + ", ciudadNacimiento=" + ciudadNacimiento + "]";
 	}
 
