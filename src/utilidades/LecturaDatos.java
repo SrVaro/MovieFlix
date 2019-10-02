@@ -32,7 +32,7 @@ public class LecturaDatos {
 				num = new Scanner(System.in).nextInt();
 			} catch (Exception e) {
 				bandera = true;
-				InterfazGrafica.mensajeError();
+				InterfazGrafica.mensajeErrorLeerInt();
 			}
 
 		} while (bandera == true);
@@ -78,7 +78,7 @@ public class LecturaDatos {
 				// InterfazGrafica.wrongData();
 				correct = false;
 
-				InterfazGrafica.mensajeError();
+				InterfazGrafica.mensajeErrorLeerDate();
 			}
 		}
 		return date;

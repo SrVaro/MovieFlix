@@ -1,5 +1,10 @@
 package interfazGrafica;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 /**
  * 
  * @author Andres
@@ -11,8 +16,22 @@ package interfazGrafica;
  */
 public class InterfazGrafica {
 
+	private static Properties prop = new Properties();
+	private static InputStream is = null;
+
 	public InterfazGrafica() {
 
+	}
+
+	public static void inicializarInterfaz() {
+		InputStream is = null;
+
+		try {
+			is = new FileInputStream("src/mensajes.properties");
+			prop.load(is);
+		} catch (IOException e) {
+			System.out.println(e.toString());
+		}
 	}
 
 	/**
@@ -117,34 +136,38 @@ public class InterfazGrafica {
 	}
 
 	public static void mostrarMenuPausa() {
-		System.out.println("\n Pulse cualquier tecla para continuar");
+		System.out.println(prop.getProperty("menu.pausa"));
 	}
 
 	/**
 	 * @author M Carmen
 	 * 
-	 *         mensajes para dar de alta una pelicula
+	 *         Mensajes para dar de alta una pelicula
 	 */
-	public static void mensajeNombrePelicula() {
-		System.out.println("\nIntroduzca el nombre de la película:");
+	public static void mensajesLeerPelicula(int n) {
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("pelicula.estreno"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("pelicula.annoEstreno"));
+			break;
+		case 3:
+			System.out.println(prop.getProperty("pelicula.valoracion"));
+			break;
+		case 4:
+			System.out.println(prop.getProperty("pelicula.id"));
+			break;
+		}
+
+	}
+	
+	public static void mensajeLeerCategoria() {
+		System.out.println(prop.getProperty("categoria.categoria"));
 	}
 
-	public static void mensajeAnnoPelicula() {
-		System.out.println("\n Introduzca el año del estreno:");
-	}
-
-	public static void mensajeCategoriaPelicula() {
-		System.out.println("\nIntroduzca a que categoria pertenece:");
-		System.out.println("\tPonga 1 para seleccionar categoria POLICIACA");
-		System.out.println("\tPonga 2 para seleccionar categoria ROMANTICA");
-		System.out.println("\tPonga 3 para seleccionar categoria AVENTURAS");
-		System.out.println("\tPonga 4 para seleccionar categoria COMEDIA");
-		System.out.println("\tPonga 5 para seleccionar categoria ANIMACION");
-		System.out.println("\tPonga 6 para seleccionar categoria THRILLER");
-	}
-
-	public static void mensajeValPelicula() {
-		System.out.println("\nIntroduzca valoración de la película:");
+	public static void mensajeMenuCategoria() {
+		System.out.println(prop.getProperty("categoria.menu"));
 	}
 
 	/**
@@ -155,49 +178,97 @@ public class InterfazGrafica {
 	 *       Mensajes para dar de alta un usuario
 	 */
 
-	public static void mensajeNombreUsuario() {
-		System.out.println("\nIntroduzca el nombre de usuario:");
+	public static void mensajesLeerUsuario(int n) {
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("usuario.nombre"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("usuario.apellido1"));
+			break;
+		case 3:
+			System.out.println(prop.getProperty("usuario.apellido2"));
+			break;
+		case 4:
+			System.out.println(prop.getProperty("usuario.fechaNacimiento"));
+			break;
+		case 5:
+			System.out.println(prop.getProperty("usuario.ciudad"));
+			break;
+		case 6:
+			System.out.println(prop.getProperty("usuario.id"));
+			break;
+		}
 	}
-
-	public static void mensajeApellido1Usuario() {
-		System.out.println("\nIntroduzca primer apellido:");
-	}
-
-	public static void mensajeApellido2Usuario() {
-		System.out.println("\nIntroduzca segundo apellido");
-	}
-
-	public static void mensajeFechaNacimientoUsuario() {
-		System.out.println("\n Introduzca la fecha de nacimiento (yyyy-MM-dd):");
-	}
-
-	public static void mensajeCiudadUsuario() {
-		System.out.println("\n Introduzca ciudad del usuario:");
-	}
+	
+	
 
 	/**
 	 * @author M Carmen
 	 * 
 	 * @date 30/09/2019
 	 * 
-	 *       mensaje de error
+	 *       Mensajes de error
 	 */
-	public static void mensajeError() {
+	public static void mensajeErrorLeerInt() {
 
-		System.out.println("\nError al introducir los datos, vuelva a intentarlo:");
+		System.out.println(prop.getProperty("lectura.error.int"));
 
 	}
 
-	/**
-	 * @author M Carmen
-	 * 
-	 * @date 01/10/2019
-	 * 
-	 *       mensaje de error BBDD
-	 */
+	public static void mensajeErrorLeerDate() {
+
+		System.out.println(prop.getProperty("lectura.error.date"));
+
+	}
+
+	public static void mensajeErrorOpcion() {
+
+		System.out.println(prop.getProperty("opcion.error"));
+
+	}
+
 	public static void mensajeErrorBbdd() {
 
-		System.out.println("\nError BDD:");
+		System.out.println(prop.getProperty("bdd.error"));
+
+	}
+	
+	public static void mensajeErrorUsuario(int n) {
+
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("error.usuario.alta"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("error.usuario.baja"));
+			break;
+		case 3:
+			System.out.println(prop.getProperty("error.usuario.listar"));
+			break;
+		case 4:
+			System.out.println(prop.getProperty("error.usuario.actualizar"));
+			break;
+		}
+
+	}
+	
+	public static void mensajeErrorPelicula(int n) {
+
+		switch (n) {
+		case 1:
+			System.out.println(prop.getProperty("error.pelicula.alta"));
+			break;
+		case 2:
+			System.out.println(prop.getProperty("error.pelicula.baja"));
+			break;
+		case 3:
+			System.out.println(prop.getProperty("error.pelicula.listar"));
+			break;
+		case 4:
+			System.out.println(prop.getProperty("error.pelicula.importar"));
+			break;
+		}
 
 	}
 

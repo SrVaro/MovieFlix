@@ -31,19 +31,19 @@ public class FactoriaUsuario {
 	public static Usuario pedirUsuario() {
 		System.out.println("Añadir un usuario");
 
-		InterfazGrafica.mensajeNombreUsuario();
+		InterfazGrafica.mensajesLeerUsuario(1);
 		String nombre = LecturaDatos.LeerString();
 
-		InterfazGrafica.mensajeApellido1Usuario();
+		InterfazGrafica.mensajesLeerUsuario(2);
 		String apellido1 = LecturaDatos.LeerString();
 
-		InterfazGrafica.mensajeApellido2Usuario();
+		InterfazGrafica.mensajesLeerUsuario(3);
 		String apellido2 = LecturaDatos.LeerString();
 
-		InterfazGrafica.mensajeFechaNacimientoUsuario();
+		InterfazGrafica.mensajesLeerUsuario(4);
 		Date fechaNacimiento = LecturaDatos.LeerFecha();
 
-		InterfazGrafica.mensajeCiudadUsuario();
+		InterfazGrafica.mensajesLeerUsuario(5);
 		String CiudadNacimiento = LecturaDatos.LeerString();
 
 		return new Usuario(nombre, apellido1, apellido2, fechaNacimiento, CiudadNacimiento);

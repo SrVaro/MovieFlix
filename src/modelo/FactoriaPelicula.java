@@ -25,25 +25,26 @@ public class FactoriaPelicula {
 	public static Pelicula pedirPelicula() {
 		System.out.println("Adjuntar nueva película");
 
-		InterfazGrafica.mensajeNombrePelicula();
+		InterfazGrafica.mensajesLeerPelicula(1);
 		String nombre = LecturaDatos.LeerString();
 
-		InterfazGrafica.mensajeAnnoPelicula();
+		InterfazGrafica.mensajesLeerPelicula(2);
 		int annoEstreno = (LecturaDatos.LeerInt());
 
 		boolean noConseguido = true;
-		InterfazGrafica.mensajeValPelicula();
+		InterfazGrafica.mensajesLeerPelicula(3);
 		int valoracion = 0;
+
 		do {
 			try {
 				valoracion = LecturaDatos.LeerInt();
 				if ((valoracion > 5) || (valoracion < 0)) {
-					throw new IOException("Rango no valido, introduzca otro rango");
+					throw new IOException();
 				} else {
 					noConseguido = false;
 				}
 			} catch (IOException e) {
-				System.out.println("Problema: " + e.getMessage());
+				InterfazGrafica.mensajeErrorOpcion();
 			}
 
 		} while (noConseguido);
@@ -51,14 +52,15 @@ public class FactoriaPelicula {
 		noConseguido = true;
 		
 		CATEGORIA categoria = null;
-		InterfazGrafica.mensajeCategoriaPelicula();
+		InterfazGrafica.mensajeMenuCategoria();
+
 
 		int opcion = 0;
 		do {
 			try {
 				opcion = LecturaDatos.LeerInt();
 				if ((opcion > 6) || (opcion < 1)) {
-					throw new IOException("Rango no valido, introduzca otra opcion");
+					throw new IOException();
 				} else {
 					noConseguido = false;
 					switch (opcion) {
@@ -83,7 +85,7 @@ public class FactoriaPelicula {
 					}
 				}
 			} catch (IOException e) {
-				System.out.println("Problema: " + e.getMessage());
+				InterfazGrafica.mensajeErrorOpcion();
 			}
 
 		} while (noConseguido);
